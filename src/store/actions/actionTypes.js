@@ -1,0 +1,4 @@
+
+export const MOVIE_FETCH_START = 'MOVIE_FETCH_START'
+export const MOVIE_FETCH_RES = 'MOVIE_FETCH_RES'
+export const MOVIE_FETCH_ERR = 'MOVIE_FETCH_ERR'
