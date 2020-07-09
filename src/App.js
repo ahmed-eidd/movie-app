@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import * as actions from './store/actions/index';
 import './App.css';
+import Layout from './components/Layout/Layout';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
   }, [dispatch])
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Layout/>
     </div>
   );
 }

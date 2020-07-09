@@ -1,0 +1,9 @@
+.Layout {
+  display: grid;
+  grid-template-columns: 18% 1fr;
+  grid-template-rows: 7rem min-content;
+  width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--grey-dark);
+  min-height: 50rem;
+}
