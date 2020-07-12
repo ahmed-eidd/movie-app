@@ -1,10 +1,12 @@
 :root {
   --black-dark: #141011;
   --red-dark: #4a1e27;
-  /* --grey-dark: #4b5458; */
   --grey-dark: #333;
-  --red-primary: #982825;
+  /* --grey-dark: #3d3d3d; */
+  /* --red-primary: #982825; */
+   --red-primary: #ED4C67;
   --grey-light: #858d84;
+  --font-primary: 'Lato', sans-serif;
 }
 
 * {
