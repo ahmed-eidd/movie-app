@@ -4,8 +4,8 @@
   --grey-dark: #333;
   /* --grey-dark: #3d3d3d; */
   /* --red-primary: #982825; */
-   --red-primary: #ED4C67;
-  --grey-light: #858d84;
+  --red-primary: #ed4c67;
+  --grey-light:  #ACACAE;
   --font-primary: 'Lato', sans-serif;
 }
 
@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
   line-height: 1.6;
   color: black;

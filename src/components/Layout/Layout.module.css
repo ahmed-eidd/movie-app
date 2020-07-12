@@ -1,9 +1,14 @@
 .Layout {
   display: grid;
-  grid-template-columns: 18% 1fr;
+  grid-template-columns: 18% 1fr 20%;
   grid-template-rows: 7rem 1fr;
   width: 120rem;
   margin: 8rem auto;
   background-color: var(--grey-dark);
   min-height: 50rem;
+}
+
+.Main {
+  grid-row: 2/3;
+  grid-column: 2/4;
 }
