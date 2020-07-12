@@ -1,7 +1,7 @@
 .Layout {
   display: grid;
   grid-template-columns: 18% 1fr;
-  grid-template-rows: 7rem min-content;
+  grid-template-rows: 7rem 1fr;
   width: 120rem;
   margin: 8rem auto;
   background-color: var(--grey-dark);

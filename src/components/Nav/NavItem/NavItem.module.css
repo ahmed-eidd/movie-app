@@ -1,0 +1,54 @@
+.NavItem {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.NavItem:hover a {
+  color: var(--red-primary) !important;
+}
+
+.NavItem:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.before {
+  height: 75%;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: top;
+  width: 3px;
+  background-color: var(--red-primary);
+  position: absolute;
+  top: 12%;
+
+  transform: scaleY(0);
+}
+
+.NavItem:hover .before {
+  transform: scaleY(1);
+}
+
+.linkActive {
+  transform: scaleY(1);
+}
+
+.NavItem a {
+  color: white;
+  font-family: var(--font-primary);
+  font-size: 1.4rem;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  padding: 1.5rem 4rem;
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+}
+
+.NavItem i {
+  margin-right: 2rem;
+}
+
+.active {
+  color: var(--red-primary) !important;
+}
