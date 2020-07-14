@@ -1,0 +1,21 @@
+.spinnerContainer {
+  height: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SliderContainer {
+  width: 100%;
+ 
+}
+
+.trendingContainer {
+  margin: 4rem auto;
+}
+
+.trendingPosterCont {
+  width: 90%;
+  margin: 1rem auto;
+}
