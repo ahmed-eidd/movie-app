@@ -15,7 +15,7 @@ const NavItem = (props) => {
     <li className={classes.NavItem}>
       <div className={attachedClasses}></div>
       <NavLink to={props.link} exact activeClassName={classes.active}>
-        <i class={props.icon}></i>
+        <i className={props.icon}></i>
         <span>{props.children}</span>
       </NavLink>
     </li>
