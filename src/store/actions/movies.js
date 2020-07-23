@@ -28,7 +28,6 @@ export const movieFetch = () => {
     
     axios
       .get(
-        // `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
         URL
       )
       .then((res) => {
@@ -72,6 +71,42 @@ export const genreFetch = () => {
     }
     ).catch(() => {
       dispatch(genreFetchError)
+    })
+  }
+}
+
+
+
+export const nowPlayingFetch = () => {
+  return {
+    type: actionTypes.NOW_PLAYING_FECTH
+  }
+}
+
+export const nowPlayingRes = (nowPlaying) => {
+  return {
+    type: actionTypes.NOW_PLAYING_RES,
+    nowPlaying: nowPlaying
+  }
+}
+
+export const nowPlayingError = () => {
+  return {
+    type: actionTypes.NOW_PLAYING_ERR
+  }
+}
+
+export const nowPlaying = () => {
+  return (dispatch) => {
+    dispatch(nowPlayingFetch)
+    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+
+    axios.get(URL).then((res) => {
+      dispatch(nowPlayingRes(res.data.results))
+      console.log(res.data.results)
+    }).catch((err) => {
+      dispatch(nowPlayingError)
+      console.log(err)
     })
   }
 }

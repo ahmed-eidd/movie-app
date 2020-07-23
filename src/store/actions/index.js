@@ -1,1 +1,1 @@
-export { movieFetch, genreFetch } from './movies';
+export { movieFetch, genreFetch, nowPlaying } from './movies';

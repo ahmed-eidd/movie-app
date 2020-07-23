@@ -2,9 +2,10 @@ import * as actionTypes from '../actions/actionTypes';
 
 const intialState = {
   movies: [],
+  nowPlaying: [],
+  genres: [],
   error: false,
   loading: false,
-  genres: [],
 };
 
 const reducer = (state = intialState, action) => {
@@ -35,15 +36,33 @@ const reducer = (state = intialState, action) => {
     case actionTypes.GENRE_FETCH_RES:
       return {
         ...state,
-        gernes: action.genres,
-        loading: false
-      }
+        genres: action.genres,
+        loading: false,
+      };
     case actionTypes.GENRE_FETCH_ERROR:
       return {
         ...state,
         error: true,
-        loading: false
-      }
+        loading: false,
+      };
+    case actionTypes.NOW_PLAYING_FECTH:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case actionTypes.NOW_PLAYING_RES:
+      return {
+        ...state,
+        nowPlaying: action.nowPlaying,
+        loading: false,
+      };
+    case actionTypes.NOW_PLAYING_ERR:
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
     default:
       return state;
   }
