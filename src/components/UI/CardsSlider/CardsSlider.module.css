@@ -1,0 +1,48 @@
+.trendingContainer {
+  margin: 8rem auto;
+}
+
+.tredingTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 5rem auto;
+  width: 88%;
+}
+
+.SeeAll {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: white;
+  margin-right: 1rem;
+}
+
+.SeeAll:hover {
+  color: var(--red-primary);
+}
+
+.SeeAll p {
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+
+.SeeAll i {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+
+.trendingTitle {
+  font-size: 2rem;
+  color: whitesmoke;
+  letter-spacing: 2px;
+}
+
+.trendingPosterCont {
+  width: 90%;
+  margin: 1rem auto;
+}
