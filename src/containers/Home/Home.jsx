@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import classes from './Home.module.css';
 import Slider from 'react-slick';
-import HomeSlider from '../../components/UI/HomeSlider/HomeSlider';
+import HomeSlider from './HomeSlider/HomeSlider';
 import PosterCard from '../../components/UI/PosterCard/PosterCard';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import CardsSlider from '../../components/UI/CardsSlider/CardsSlider';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -13,10 +14,12 @@ const Home = () => {
   const movies = useSelector((state) => state.movies);
   const loading = useSelector((state) => state.loading);
   const genres = useSelector((state) => state.genres);
+  const nowPlaying = useSelector((state) => state.nowPlaying);
   useEffect(() => {
     console.log();
     dispatch(actions.movieFetch());
     dispatch(actions.genreFetch());
+    dispatch(actions.nowPlaying());
     console.log(genres);
   }, []);
 
@@ -33,22 +36,24 @@ const Home = () => {
     speed: 500,
     slidestoshow: 1,
     slidestoscroll: 1,
+ 
   };
 
-  const TrendingSettings = {
+  const cardsSettings = {
     dots: false,
     arrows: true,
     autoplay: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5
+    slidesToShow: 4,
+    slidesToScroll: 4,
   };
 
-  const getGenreById = (genreId) => {
-    const genre = genres.find((currGenre) => currGenre.id === genreId);
-    // console.log(genre.name)
-  };
+  // const getGenreById = ({ ...genreId }) => {
+  //   const genre = genres.find((currGenre) => currGenre.id === genreId.id);
+  //   console.log(genre);
+  // };
+
   let main = (
     <div className={classes.spinnerContainer}>
       <Spinner />
@@ -62,7 +67,9 @@ const Home = () => {
           <Slider {...settings}>
             {movies.map((movie) => (
               <HomeSlider
-                genre={getGenreById(28)}
+                genre={movie.genre_ids.flatMap((g) =>
+                genres.filter((genre) => genre.id === g).map((r) => <li>{r.name}</li>)
+                )}
                 src={ImgUrl(movie.backdrop_path)}
                 title={movie.title}
                 key={movie.id}
@@ -71,20 +78,21 @@ const Home = () => {
             ))}
           </Slider>
         </div>
-        <div className={classes.trendingContainer}>
-          <h2>Trending Now</h2>
-          <div className={classes.trendingPosterCont}>
-            <Slider {...TrendingSettings}>
-              {movies.map((movie) => (
-                <PosterCard
-                  src={ImgUrl(movie.poster_path)}
-                  title={movie.title}
-                  key={movie.id}
-                />
-              ))}
-            </Slider>
-          </div>
-        </div>
+    
+        <CardsSlider
+          settings={cardsSettings}
+          movies={movies}
+          title="Trending Now"
+          link="/home/trendingnow"
+        />
+        <CardsSlider
+          settings={cardsSettings}
+          movies={nowPlaying}
+          title="Now Playing"
+          link="home/nowplaying"
+          genres={genres}
+        />
+     
       </div>
     );
   }
@@ -93,3 +101,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+

@@ -8,8 +8,11 @@ const HomeSlider = (props) => {
       <img src={props.src} alt={props.title} />
       <div className={classes.textContainer}>
         <p>{props.title}</p>
-        <p>{props.genre}</p>
+        <ul className={classes.genre}>{
+        props.genre
+        }</ul>
         <p>{props.rating} / 10</p>
+        <i className="fas fa-star"></i>
       </div>
     </div>
   );

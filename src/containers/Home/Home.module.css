@@ -12,10 +12,30 @@
 }
 
 .trendingContainer {
-  margin: 4rem auto;
+  margin: 8rem auto;
+}
+
+.trendingTitle {
+  font-size: 2rem;
+  color: whitesmoke;
+  margin-left: 6rem;
+  margin-bottom: 5rem;
+  letter-spacing: 2px;
 }
 
 .trendingPosterCont {
   width: 90%;
   margin: 1rem auto;
 }
+
+
+
+
+
+
+
+
+
+.slick-dots li button:before {
+    color: #ffffff !important;
+  }

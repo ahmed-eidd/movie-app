@@ -14,11 +14,34 @@
   bottom: 30px;
   left: 50px;
   /* border: 1px solid var(--red-primary); */
+ 
+}
+
+.textContainer i {
+  font-size: 2rem;
+  color: yellow;
+  position: absolute; 
+  bottom: 0.6rem;
+  left: 9rem;
+
 }
 
 .textContainer p {
   color: white;
   font-size: 2rem;
   letter-spacing: 2px;
+}
+
+
+.genre {
+  list-style: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.genre li {
+  margin-right: 1rem;
+  font-size: 1.2rem;
 }
 
