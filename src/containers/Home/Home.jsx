@@ -9,12 +9,16 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import CardsSlider from '../../components/UI/CardsSlider/CardsSlider';
 
 const Home = () => {
+  // Dispatch
   const dispatch = useDispatch();
 
+  // Redux State
   const movies = useSelector((state) => state.movies);
   const loading = useSelector((state) => state.loading);
   const genres = useSelector((state) => state.genres);
   const nowPlaying = useSelector((state) => state.nowPlaying);
+
+  // useEffect Fecthing
   useEffect(() => {
     console.log();
     dispatch(actions.movieFetch());
@@ -23,12 +27,15 @@ const Home = () => {
     console.log(genres);
   }, []);
 
+  // a Function that gets called on every img to get image
   const ImgUrl = (link) => {
     return `https://image.tmdb.org/t/p/original${link}`;
   };
 
+
+  // React Slick Settings for the Header Slider
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     autoplay: true,
     autoplayspeed: 4000,
@@ -39,6 +46,8 @@ const Home = () => {
  
   };
 
+
+  // React Slick Settings for the Cards sections
   const cardsSettings = {
     dots: false,
     arrows: true,
@@ -49,17 +58,14 @@ const Home = () => {
     slidesToScroll: 4,
   };
 
-  // const getGenreById = ({ ...genreId }) => {
-  //   const genre = genres.find((currGenre) => currGenre.id === genreId.id);
-  //   console.log(genre);
-  // };
-
+  // conditional Main Content
   let main = (
     <div className={classes.spinnerContainer}>
       <Spinner />
     </div>
   );
 
+  // Main Content if state.loading not True
   if (!loading) {
     main = (
       <div className={classes.container}>
@@ -83,13 +89,13 @@ const Home = () => {
           settings={cardsSettings}
           movies={movies}
           title="Trending Now"
-          link="/home/trendingnow"
+          link="/seeall/trendingnow"
         />
         <CardsSlider
           settings={cardsSettings}
           movies={nowPlaying}
           title="Now Playing"
-          link="home/nowplaying"
+          link="seeall/nowplaying"
           genres={genres}
         />
      
