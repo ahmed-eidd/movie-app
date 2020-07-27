@@ -1,21 +1,23 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import * as action from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Categories.module.css';
+import CategoriesLinks from './CategoriesLinks/CategoriesLinks';
+// import SeeAll from '../../components/SeeAll/SeeAll';
 
 
 const Categories = () => {
-  const genres = useSelector((state) => state.genres);
-  // const genres = []
-  const loading = useSelector((state) => state.loading);
+  // Redux Store
+  const genres = useSelector((state) => state.moviesHome.genres);
+  const loading = useSelector((state) => state.UI.loading);
 
 
-  let main = <p>There's nothing</p>;
+  let main = <Spinner/>;
   if (genres) {
     main = (
       <ul>
-        {genres.map((genre) => <li key={genre.id}>{genre.name}</li>
+        {genres.map((genre) => <CategoriesLinks key={genre.id} name={genre.name} genreType={genre.id}/>
   )}
       </ul>
     );

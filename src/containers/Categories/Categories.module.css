@@ -8,16 +8,3 @@
   row-gap: 3rem;
   column-gap: 3rem;
 }
-.Categories ul li {
-  cursor: pointer;
-  font-size: 1.6rem;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-  padding: 1rem 2rem;
-}
-.Categories ul li:hover {
-  background-color: var(--red-primary);
-  transform: translateY(-3px);
-}
