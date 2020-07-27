@@ -79,7 +79,7 @@ export const genreFetch = () => {
 
 export const nowPlayingFetch = () => {
   return {
-    type: actionTypes.NOW_PLAYING_FECTH
+    type: actionTypes.NOW_PLAYING_FECTH_START
   }
 }
 
@@ -96,10 +96,10 @@ export const nowPlayingError = () => {
   }
 }
 
-export const nowPlaying = () => {
+export const nowPlaying = (pageNum) => {
   return (dispatch) => {
     dispatch(nowPlayingFetch)
-    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${pageNum}`
 
     axios.get(URL).then((res) => {
       dispatch(nowPlayingRes(res.data.results))
