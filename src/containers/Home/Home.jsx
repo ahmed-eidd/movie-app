@@ -13,10 +13,10 @@ const Home = () => {
   const dispatch = useDispatch();
 
   // Redux State
-  const movies = useSelector((state) => state.movies);
-  const loading = useSelector((state) => state.loading);
-  const genres = useSelector((state) => state.genres);
-  const nowPlaying = useSelector((state) => state.nowPlaying);
+  const movies = useSelector((state) => state.moviesHome.movies);
+  const loading = useSelector((state) => state.UI.loading);
+  const genres = useSelector((state) => state.moviesHome.genres);
+  const nowPlaying = useSelector((state) => state.moviesHome.nowPlaying);
 
   // useEffect Fecthing
   useEffect(() => {
@@ -91,6 +91,7 @@ const Home = () => {
           title="Trending Now"
           link="/seeall/trendingnow"
         />
+        
         <CardsSlider
           settings={cardsSettings}
           movies={nowPlaying}
@@ -98,11 +99,9 @@ const Home = () => {
           link="seeall/nowplaying"
           genres={genres}
         />
-     
       </div>
     );
   }
-
   return main;
 };
 

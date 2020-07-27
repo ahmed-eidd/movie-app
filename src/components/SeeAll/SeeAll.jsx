@@ -10,23 +10,24 @@ const SeeAll = (props) => {
   // Dispatch Hook
   const dispatch = useDispatch();
 
-
   // React Redux Store
   let movies = null;
-  const tredingnow = useSelector((state) => state.movies );
-  const nowPlyaing = useSelector((state) => state.nowPlaying);
-  const genres = useSelector((state) => state.genres);
-  const loading = useSelector((state) => state.loading);
+  const tredingnow = useSelector((state) => state.moviesHome.movies);
+  const nowPlyaing = useSelector((state) => state.moviesHome.nowPlaying);
+  const genres = useSelector((state) => state.moviesHome.genres);
+  const categories = useSelector((state) => state.categories.categoriesMovies);
+  const loading = useSelector((state) => state.UI.loading);
 
-
-  // useEffect for fetching 
+  // useEffect for fetching
   useEffect(() => {
     // window.pageYOffset() === '0'
-    document.body.scrollTo = 0; 
+    document.body.scrollTo = 0;
     dispatch(actions.genreFetch());
     console.log(props);
 
     // switch Statement to check the match.params.type if its for trending or now playing page
+  
+
     switch (props.match.params.type) {
       case 'trendingnow':
         dispatch(actions.movieFetch());
@@ -34,19 +35,24 @@ const SeeAll = (props) => {
       case 'nowplaying':
         dispatch(actions.nowPlaying());
         break;
+      case props.genreType:
+        dispatch(actions.categoriesFecth(props.match.params.genreType))
+        break;
       default:
         return;
     }
   }, [props.match.params.type, movies]);
 
 
-  // Conditional for movies 
+  // Conditional for which movies to render
   if (props.match.params.type === 'trendingnow') {
-    movies = tredingnow
-  } else if (props.match.params.type === 'nowplaying'){
-    movies = nowPlyaing
+    movies = tredingnow;
+ 
+  } else if (props.match.params.type === 'nowplaying') {
+    movies = nowPlyaing;
+  } else if (props.match.params.genreType) {
+    movies = categories
   }
-
 
   const ImgUrl = (link) => {
     return `https://image.tmdb.org/t/p/original${link}`;

@@ -6,7 +6,7 @@ import PosterCard from '../PosterCard/PosterCard';
 import { Link } from 'react-router-dom';
 
 const CardsSlider = ({ movies, settings, title, link }) => {
-  const genres = useSelector((state) => state.genres);
+  const genres = useSelector((state) => state.moviesHome.genres);
   const ImgUrl = (link) => {
     return `https://image.tmdb.org/t/p/original${link}`;
   };

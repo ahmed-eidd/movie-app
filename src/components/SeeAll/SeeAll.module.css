@@ -4,4 +4,5 @@
   grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
   row-gap: 7rem;
   justify-items: center;
+  width: 100%;
 }
