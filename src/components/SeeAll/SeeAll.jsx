@@ -16,7 +16,7 @@ const SeeAll = (props) => {
   const nowPlyaing = useSelector((state) => state.moviesHome.nowPlaying);
   const genres = useSelector((state) => state.moviesHome.genres);
   const categories = useSelector((state) => state.categories.categoriesMovies);
-  const loading = useSelector((state) => state.UI.loading);
+  const loading = useSelector((state) => state.ui.loading);
 
   // useEffect for fetching
   useEffect(() => {
@@ -52,6 +52,8 @@ const SeeAll = (props) => {
     movies = nowPlyaing;
   } else if (props.match.params.genreType) {
     movies = categories
+  } else {
+    movies = props.incomingMovies;
   }
 
   const ImgUrl = (link) => {
@@ -59,7 +61,7 @@ const SeeAll = (props) => {
   };
 
   let main = <Spinner />;
-  if (movies) {
+  if (!loading) {
     main = (
       <div className={classes.SeeAllContainer}>
         {movies.map((movie) => (

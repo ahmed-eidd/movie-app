@@ -14,7 +14,7 @@ const Home = () => {
 
   // Redux State
   const movies = useSelector((state) => state.moviesHome.movies);
-  const loading = useSelector((state) => state.UI.loading);
+  const loading = useSelector((state) => state.ui.loading);
   const genres = useSelector((state) => state.moviesHome.genres);
   const nowPlaying = useSelector((state) => state.moviesHome.nowPlaying);
 

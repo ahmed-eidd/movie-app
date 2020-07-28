@@ -10,7 +10,7 @@ import CategoriesLinks from './CategoriesLinks/CategoriesLinks';
 const Categories = () => {
   // Redux Store
   const genres = useSelector((state) => state.moviesHome.genres);
-  const loading = useSelector((state) => state.UI.loading);
+  const loading = useSelector((state) => state.ui.loading);
 
 
   let main = <Spinner/>;

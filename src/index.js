@@ -10,13 +10,16 @@ import * as serviceWorker from './serviceWorker';
 import movieHomeReducer from './store/reducers/movieHomeReducer';
 import categoriesReducer from './store/reducers/categoriesReducer';
 import UIReducer from './store/reducers/UIReducer';
+import topChartReducer from './store/reducers/topChartReducer';
 import { BrowserRouter } from 'react-router-dom';
+
 
 
 const rootReducer = combineReducers({
     moviesHome: movieHomeReducer,
     categories: categoriesReducer,
-    UI: UIReducer
+    ui: UIReducer,
+    top: topChartReducer
 });
 
 
