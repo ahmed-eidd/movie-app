@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import classes from './TopChart.module.css';
+import classes from './NewRelease.module.css';
 import FullPage from '../../components/SeeAll/SeeAll';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';
@@ -8,11 +8,11 @@ import * as actions from '../../store/actions/index';
 
 const TopChart = () => {
   const dispatch = useDispatch();
-  const topChartMovies = useSelector((state) => state.top.topChart);
+  const newReleaseMovies = useSelector((state) => state.new.newRelease);
   const loading = useSelector((state) => state.ui.loading);
 
   useEffect(() => {
-    dispatch(actions.topChart());
+    dispatch(actions.newReleaseFetch());
   }, []);
 
   let main = <Spinner />;
@@ -20,8 +20,8 @@ const TopChart = () => {
   if (!loading) {
     main = (
       <div className={classes.container}>
-        <h2 className={classes.Title}>Top Chart</h2>
-        <FullPage incomingMovies={topChartMovies} />
+        <h2 className={classes.Title}>New Release</h2>
+        <FullPage incomingMovies={newReleaseMovies} />
       </div>
     );
   }

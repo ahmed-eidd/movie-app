@@ -72,6 +72,22 @@ const UIReducer = (state = initialState, action) => {
         loading: false,
         error: true,
       };
+    case actionTypes.NEW_RELEASE_FETCH_START:
+      return {
+        ...state,
+        loading: true
+      }
+    case actionTypes.NEW_RELEASE_RES:
+      return {
+        ...state,
+        loading: false
+      }
+    case actionTypes.NOW_PLAYING_ERR:
+      return {
+        ...state,
+        loading: false,
+        error: true
+      }
     default:
       return state;
   }

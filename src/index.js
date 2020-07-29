@@ -11,6 +11,7 @@ import movieHomeReducer from './store/reducers/movieHomeReducer';
 import categoriesReducer from './store/reducers/categoriesReducer';
 import UIReducer from './store/reducers/UIReducer';
 import topChartReducer from './store/reducers/topChartReducer';
+import newRelaseReducer from './store/reducers/newReleaseReducer';
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     moviesHome: movieHomeReducer,
     categories: categoriesReducer,
     ui: UIReducer,
-    top: topChartReducer
+    top: topChartReducer,
+    new: newRelaseReducer
 });
 
 

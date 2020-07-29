@@ -22,7 +22,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const movieFetch = () => {
   return (dispatch) => {
-    dispatch(movieFetchStart)
+    dispatch(movieFetchStart())
     
     const URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`;
     
@@ -62,7 +62,7 @@ export const genreFetchError = () => {
 
 export const genreFetch = () => {
   return (dispatch) => {
-    dispatch(genreFetchStart)
+    dispatch(genreFetchStart())
     const URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
     axios.get(URL).then((res) => {
       dispatch(genreFetchRes(res.data.genres))
@@ -70,7 +70,7 @@ export const genreFetch = () => {
 
     }
     ).catch(() => {
-      dispatch(genreFetchError)
+      dispatch(genreFetchError())
     })
   }
 }
@@ -98,14 +98,14 @@ export const nowPlayingError = () => {
 
 export const nowPlaying = (pageNum) => {
   return (dispatch) => {
-    dispatch(nowPlayingFetch)
+    dispatch(nowPlayingFetch())
     const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${pageNum}`
 
     axios.get(URL).then((res) => {
       dispatch(nowPlayingRes(res.data.results))
       console.log(res.data.results)
     }).catch((err) => {
-      dispatch(nowPlayingError)
+      dispatch(nowPlayingError())
       console.log(err)
     })
   }
