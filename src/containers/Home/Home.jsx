@@ -74,7 +74,7 @@ const Home = () => {
             {movies.map((movie) => (
               <HomeSlider
                 genre={movie.genre_ids.flatMap((g) =>
-                genres.filter((genre) => genre.id === g).map((r) => <li>{r.name}</li>)
+                genres.filter((genre) => genre.id === g).map((r) => <li key={r.id}>{r.name}</li>)
                 )}
                 src={ImgUrl(movie.backdrop_path)}
                 title={movie.title}

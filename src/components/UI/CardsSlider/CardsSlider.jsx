@@ -17,7 +17,7 @@ const CardsSlider = ({ movies, settings, title, link }) => {
 
         <Link to={link} className={classes.SeeAll}>
           <p>See All</p>
-          <i class="fas fa-long-arrow-alt-right"></i>
+          <i className="fas fa-long-arrow-alt-right"></i>
         </Link>
       </div>
       <div className={classes.trendingPosterCont}>
@@ -30,7 +30,7 @@ const CardsSlider = ({ movies, settings, title, link }) => {
               genre={movie.genre_ids.flatMap((g) =>
                 genres
                   .filter((genre) => genre.id === g)
-                  .map((r) => <li>{r.name},</li>)
+                  .map((r) => <li key={r.id}>{r.name},</li>)
               )}
             />
           ))}
