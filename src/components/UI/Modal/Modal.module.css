@@ -1,0 +1,15 @@
+.ModalContainer {
+  width: 40rem;
+  z-index: 500;
+  position: sticky;
+  bottom: 30%;
+  left: 42%;
+  background-color: var(--grey-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
