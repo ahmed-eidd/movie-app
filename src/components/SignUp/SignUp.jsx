@@ -2,11 +2,11 @@ import React from 'react'
 import Button from '../UI/Button/Button';
 import classes from './SignUp.module.css';
 
-const SignUp = () => {
+const SignUp = ({clicked}) => {
   return (
     <div className={classes.Container}>
-      <Button type='red'>Sign Up</Button>
-      <Button type='grey'>Log In</Button>
+      <Button clicked={clicked} type='red'>Sign Up</Button>
+      <Button clicked={clicked} type='grey'>Log In</Button>
     </div>
   )
 }
