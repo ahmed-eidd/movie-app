@@ -16,3 +16,21 @@
   flex-direction: column;
   justify-content: center;
 }
+
+
+.ModalTabsButton {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-right: 2rem;
+  padding: 1rem 0.4rem;
+  outline: none;
+  cursor: pointer;
+  /* border-bottom: 1px white solid; */
+}
+
+.active {
+  color: var(--red-primary);
+}

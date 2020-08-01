@@ -1,18 +1,24 @@
-import React,{useState} from 'react';
-import LoginModalBtn from './LoginModalBtn/LoginModalBtn';
+import React, { useState } from 'react';
+import LoginModalBtns from './LoginModalBtns/LoginModalBtns';
 import Button from '../UI/Button/Button';
 import classes from './LoginModal.module.css';
 import Modal from '../UI/Modal/Modal';
 
-const LoginModal = ({clickHandler,modalHandler,showModal}) => {
-  const [open, setOpen] = useState('login');
+const LoginModal = ({
+ 
+  modalHandler, // a passed func to show and close modal for modal and backdrop
+  showModal, // a boolean to show or close modal from modal and backdrop
+  ModalTabHandler, // a passed func to show login or sign up
+  loginTab, // a value to show login or sign up
+}) => {
+
+
+  // Login Mini Component
+
   const Login = (
     <React.Fragment>
       <h3 className={classes.ModalTitle}>Log in to Movie Box</h3>
-      <div className={classes.ModalTabs}>
-        <LoginModalBtn clicked={clickHandler}>Login In</LoginModalBtn>
-        <LoginModalBtn clicked={clickHandler}>Sign UP</LoginModalBtn>
-      </div>
+      <LoginModalBtns clicked={ModalTabHandler} active={loginTab} />
       <form className={classes.ModalForm}>
         <div className={classes.ModalFormInputs}>
           {/* <label htmlFor="usename">Username</label> */}
@@ -29,19 +35,19 @@ const LoginModal = ({clickHandler,modalHandler,showModal}) => {
     </React.Fragment>
   );
 
+
+    // sign up Mini component
+
   const SignUp = (
     <React.Fragment>
       <h3 className={classes.ModalTitle}>Join Movie Box</h3>{' '}
-      <div className={classes.ModalTabs}>
-        <LoginModalBtn clicked={clickHandler}>Login In</LoginModalBtn>
-        <LoginModalBtn clicked={clickHandler}>Sign UP</LoginModalBtn>
-      </div>
+      <LoginModalBtns clicked={ModalTabHandler} active={loginTab} />}
       <form className={classes.ModalForm}>
         <div className={classes.ModalFormInputs}>
           {/* <label htmlFor="usename">Username</label> */}
           <input type="text" name="username" placeholder="Username" />
         </div>
-         <div className={classes.ModalFormInputs}>
+        <div className={classes.ModalFormInputs}>
           {/* <label htmlFor="password">Password</label> */}
           <input type="email" name="email" placeholder="E-mail" />
         </div>
@@ -55,7 +61,15 @@ const LoginModal = ({clickHandler,modalHandler,showModal}) => {
       <Button type="grey">Guest Mode</Button>
     </React.Fragment>
   );
-  return <Modal show={showModal} backdropHandler={modalHandler}>{open === 'login' ? Login : SignUp}</Modal>;
-}
+  return (
+    <Modal
+      show={showModal}
+      backdropHandler={modalHandler}
+      clicked={modalHandler}
+    >
+      {loginTab === 'Sign Up' ? SignUp : Login}
+    </Modal>
+  );
+};
 
 export default LoginModal;

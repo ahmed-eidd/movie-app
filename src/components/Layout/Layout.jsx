@@ -5,21 +5,38 @@ import Nav from '../Nav/Nav';
 import Search from '../Search/Search';
 import SignUp from '../SignUp/SignUp';
 import LoginModal from '../LoginModal/LoginModal';
-import Backdrop from '../UI/Backdrop/Backdrop';
 
-const Layout = (props) => {
-  const [open,setOpen] = useState(true);
-  let main = <main className={classes.Main}>{props.children}</main>;
+const Layout = ({ children }) => {
+  const [open, setOpen] = useState(true);
+  const [loginTab, setLoginsTab] = useState('Sign Up');
+
+  
+  let main = <main className={classes.Main}>{children}</main>;
+
+  const handlingLoginBtn = () => {
+    setOpen(true);
+    setLoginsTab('Log In');
+  };
+  const handlingSignBtn = () => {
+    setOpen(true);
+    setLoginsTab('Sign Up');
+  };
   const handlingModal = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
   return (
     <div className={classes.Layout}>
-      <LoginModal modalHandler={handlingModal} showModal={open} />
+      <LoginModal
+        modalHandler={handlingModal}
+        showModal={open}
+        ModalTabHandler={setLoginsTab}
+        loginTab={loginTab}
+  
+      />
       <Logo />
       <Nav />
       <Search />
-      <SignUp clicked={handlingModal} />
+      <SignUp loginBtnHandler={handlingLoginBtn} signBtnHandler={handlingSignBtn} />
       {main}
     </div>
   );

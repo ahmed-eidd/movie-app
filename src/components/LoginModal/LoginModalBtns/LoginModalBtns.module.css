@@ -1,11 +1,20 @@
-
+.ModalTabs {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 3rem;
+  /* border-bottom: 1px solid rgb(204, 42, 42) ; */
+}
 .ModalTabsButton {
   background: transparent;
   border: none;
   color: white;
+  font-weight: bold;
   font-size: 1.6rem;
   margin-right: 2rem;
   padding: 1rem 0.4rem;
+  outline: none;
   cursor: pointer;
   /* border-bottom: 1px white solid; */
 }

@@ -1,7 +1,7 @@
 .ModalContainer {
   width: 40rem;
   z-index: 500;
-  position: sticky;
+  position: fixed;
   bottom: 30%;
   left: 42%;
   background-color: var(--grey-dark);
@@ -13,3 +13,11 @@
   transition: all 0.4s ease-in-out;
 }
 
+.ModalContainer i{
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}

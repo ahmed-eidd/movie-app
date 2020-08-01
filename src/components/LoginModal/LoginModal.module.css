@@ -1,16 +1,11 @@
-.ModalTabs {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 3rem;
-  /* border-bottom: 1px solid rgb(204, 42, 42) ; */
-}
+
 
 .ModalTitle {
   color: white;
   font-size: 1.8rem;
+
 }
+
 
 
 
