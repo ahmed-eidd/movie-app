@@ -5,14 +5,11 @@ import classes from './LoginModal.module.css';
 import Modal from '../UI/Modal/Modal';
 
 const LoginModal = ({
- 
   modalHandler, // a passed func to show and close modal for modal and backdrop
   showModal, // a boolean to show or close modal from modal and backdrop
   ModalTabHandler, // a passed func to show login or sign up
   loginTab, // a value to show login or sign up
 }) => {
-
-
   // Login Mini Component
 
   const Login = (
@@ -29,14 +26,13 @@ const LoginModal = ({
           <input type="password" name="password" placeholder="Password" />
         </div>
       </form>
-      <Button type="red">Log In</Button>
+      {/* <Button type="red">Log In</Button>
       <p className={classes.span}>OR</p>
-      <Button type="grey">Guest Mode</Button>
+      <Button type="grey">Guest Mode</Button> */}
     </React.Fragment>
   );
 
-
-    // sign up Mini component
+  // sign up Mini component
 
   const SignUp = (
     <React.Fragment>
@@ -56,9 +52,6 @@ const LoginModal = ({
           <input type="password" name="password" placeholder="Password" />
         </div>
       </form>
-      <Button type="red">Sign Up</Button>
-      <p className={classes.span}>OR</p>
-      <Button type="grey">Guest Mode</Button>
     </React.Fragment>
   );
   return (
@@ -68,6 +61,13 @@ const LoginModal = ({
       clicked={modalHandler}
     >
       {loginTab === 'Sign Up' ? SignUp : Login}
+      {loginTab === 'Sign Up' ? (
+        <Button type="red">{loginTab}</Button>
+      ) : (
+        <Button type="red">{loginTab}</Button>
+      )}
+      <p className={classes.span}>OR</p>
+      <Button type="grey">Guest Mode</Button>
     </Modal>
   );
 };
