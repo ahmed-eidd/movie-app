@@ -23,7 +23,7 @@ const PosterCard = ({ src, title, genre }) => {
         <button className={classes.likeBtn}>
           <i className="far fa-heart"></i>
         </button>
-        <button className={classes.wishListBtn}>
+        <button onClick={()=> console.log('button has been clicked')} className={classes.wishListBtn}>
           <i className="far fa-clock"></i>
         </button>
         <img src={src} alt={title} className={classes.posterImg} />
