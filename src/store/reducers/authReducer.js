@@ -26,6 +26,11 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loginModal: !state.loginModal
       }
+    case actionTypes.GUEST_SESSION_LOG_OUT:
+      return {
+        ...state,
+        loginStatus: false
+      }
     default:
       return state
   }

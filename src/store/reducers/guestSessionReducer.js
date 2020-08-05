@@ -11,13 +11,13 @@ const initialState = {
 
 const guestSessionReducer = (state = initialState, action) => {
   switch(action.type) {
-    case actionTypes.GENRE_FETCH_RES:
+    case actionTypes.GUEST_SESSION_RES:
       return {
-        ...state,
-        guestId: action.guestSessionId
+        guestId: action.guestId
       }
+   
     default:
-      return state
+      return state;
   }
 }
 

@@ -9,7 +9,7 @@ const initialState = {
   categoriesMovies: []
 }
 
-const categoriesReducer = (state = initialState,action) => {
+const categoriesReducer = (state = initialState ,action) => {
   switch(action.type) {
     case actionTypes.CATEGORIES_RES:
       return {

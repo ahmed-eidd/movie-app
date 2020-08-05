@@ -12,3 +12,4 @@ export const setLoginModal = () => {
     type: actionTypes.SET_LOGIN_MODAL
   }
 }
+

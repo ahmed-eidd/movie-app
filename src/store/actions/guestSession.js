@@ -10,7 +10,7 @@ export const guestSessionFecthStart = () => {
 export const guestSessionRes = (guestSessionId) => {
   return {
     type: actionTypes.GUEST_SESSION_RES,
-    guestSessionId,
+    guestId: guestSessionId,
   };
 };
 
@@ -30,10 +30,39 @@ export const guestSessionFetch = () => {
       .get(URL)
       .then((res) => {
         dispatch(guestSessionRes(res.data.guest_session_id));
-        console.log(res)
+        console.log(res.data.guest_session_id);
       })
       .catch((err) => {
         dispatch(guestSessionErr());
+      });
+  };
+};
+
+export const guestSessionLogOut = () => {
+  return {
+    type: actionTypes.GUEST_SESSION_LOG_OUT,
+  };
+};
+
+export const guestSessionDelete = (id) => {
+  return (dispatch) => {
+    const URL = `https://api.themoviedb.org/3/authentication/session?api_key=${API_KEY}`;
+
+    axios
+      .delete(URL, {
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        data: JSON.stringify({
+          session_id: id,
+        }),
+      })
+      .then((res) => {
+        dispatch(guestSessionLogOut());
+        console.log('it worked');
+      })
+      .catch((err) => {
+        console.log(err, id);
       });
   };
 };
