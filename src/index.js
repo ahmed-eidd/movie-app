@@ -12,6 +12,8 @@ import categoriesReducer from './store/reducers/categoriesReducer';
 import UIReducer from './store/reducers/UIReducer';
 import topChartReducer from './store/reducers/topChartReducer';
 import newRelaseReducer from './store/reducers/newReleaseReducer';
+import guestSessionReducer from './store/reducers/guestSessionReducer';
+import authReducer from './store/reducers/authReducer';
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -21,7 +23,9 @@ const rootReducer = combineReducers({
     categories: categoriesReducer,
     ui: UIReducer,
     top: topChartReducer,
-    new: newRelaseReducer
+    new: newRelaseReducer,
+    guestSession: guestSessionReducer,
+    auth: authReducer
 });
 
 
