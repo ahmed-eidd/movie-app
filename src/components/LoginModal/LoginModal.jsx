@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LoginModalBtns from './LoginModalBtns/LoginModalBtns';
 import Button from '../UI/Button/Button';
 import classes from './LoginModal.module.css';
@@ -9,7 +9,14 @@ const LoginModal = ({
   showModal, // a boolean to show or close modal from modal and backdrop
   ModalTabHandler, // a passed func to show login or sign up
   loginTab, // a value to show login or sign up
+  guestModeHandler // a passed func to get guest mode
 }) => {
+
+  
+
+
+
+
   // Login Mini Component
 
   const Login = (
@@ -67,7 +74,7 @@ const LoginModal = ({
         <Button type="red">{loginTab}</Button>
       )}
       <p className={classes.span}>OR</p>
-      <Button type="grey">Guest Mode</Button>
+      <Button clicked={guestModeHandler} type="grey">Guest Mode</Button>
     </Modal>
   );
 };

@@ -1,0 +1,13 @@
+.Container {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+p {
+  color: white;
+  font-size: 1.4rem;
+
+}
