@@ -16,9 +16,6 @@ const Nav = (props) => {
         <NavItem link="/categories" icon="fas fa-th-large">
           Categories
         </NavItem>
-        <NavItem link="/recommended" icon="far fa-check-square">
-          Recommended
-        </NavItem>
         <NavItem link="/top" icon="fas fa-chart-line">
           Top Chart
         </NavItem>

@@ -22,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     console.log();
     dispatch(actions.movieFetch());
-    dispatch(actions.genreFetch());
+    // dispatch(actions.genreFetch());
     dispatch(actions.nowPlaying());
     console.log(genres);
   }, []);
