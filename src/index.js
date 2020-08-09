@@ -15,33 +15,33 @@ import newRelaseReducer from './store/reducers/newReleaseReducer';
 import guestSessionReducer from './store/reducers/guestSessionReducer';
 import authReducer from './store/reducers/authReducer';
 import { BrowserRouter } from 'react-router-dom';
-
-
+import favMoviesReducer from './store/reducers/favMoviesReducer';
+import wishListMoviesReducer from './store/reducers/wishListMoviesReducer';
 
 const rootReducer = combineReducers({
-    moviesHome: movieHomeReducer,
-    categories: categoriesReducer,
-    ui: UIReducer,
-    top: topChartReducer,
-    new: newRelaseReducer,
-    guestSession: guestSessionReducer,
-    auth: authReducer
+  moviesHome: movieHomeReducer,
+  categories: categoriesReducer,
+  ui: UIReducer,
+  top: topChartReducer,
+  new: newRelaseReducer,
+  guestSession: guestSessionReducer,
+  fav: favMoviesReducer,
+  wishList: wishListMoviesReducer,
+  auth: authReducer
 });
-
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-
-
-const store = createStore(rootReducer, composeEnhancers(
-  applyMiddleware(thunk)
-));
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App  />
+        <App />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

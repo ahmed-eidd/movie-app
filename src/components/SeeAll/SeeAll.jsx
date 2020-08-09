@@ -83,6 +83,8 @@ const SeeAll = (props) => {
       <div className={classes.SeeAllContainer}>
         {movies.map((movie) => (
           <PosterCard
+            favMovie={movie}
+            wishListMovie={movie}
             src={ImgUrl(movie.poster_path)}
             title={movie.title}
             key={movie.id}

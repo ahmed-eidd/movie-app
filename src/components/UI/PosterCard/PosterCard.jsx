@@ -1,8 +1,10 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import classes from './PosterCard.module.css';
+import * as actions from '../../../store/actions/index';
 
-const PosterCard = ({ src, title, genre }) => {
-
+const PosterCard = ({ src, title, genre, favMovie,wishListMovie }) => {
+  const dispatch = useDispatch();
   // a function to reduce the title if it has more than 17 character with convert the string into an array to use the reduce method on it and join it back to a string again
   const limitTitle = (name, limit = 17) => {
     const newTitle = [];
@@ -20,10 +22,10 @@ const PosterCard = ({ src, title, genre }) => {
   return (
     <div className={classes.posterCardCont}>
       <div className={classes.img}>
-        <button className={classes.likeBtn}>
+        <button className={classes.likeBtn} onClick={() => dispatch(actions.getFavMovies(favMovie))} >
           <i className="far fa-heart"></i>
         </button>
-        <button onClick={()=> console.log('button has been clicked')} className={classes.wishListBtn}>
+        <button onClick={()=>  dispatch(actions.getWishListMovies(wishListMovie)) } className={classes.wishListBtn}>
           <i className="far fa-clock"></i>
         </button>
         <img src={src} alt={title} className={classes.posterImg} />
