@@ -1,14 +1,29 @@
-import React, {useEffect} from 'react';
-import { useDispatch, useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import FullPage from '../../components/SeeAll/SeeAll';
 import classes from './WishList.module.css';
+import * as actions from '../../store/actions/index';
 
 const WishList = () => {
+  const dispatch = useDispatch();
+  const loginStatus = useSelector((state) => state.auth.loginStatus);
+  const wishListMovies = useSelector((state) => state.wishList.wishListMovies)
+
+  let main = <h1 className={classes.MainTitle}>No WishList Movies</h1>;
+  if (wishListMovies) {
+    main = <FullPage incomingMovies={wishListMovies} />
+  }
+  useEffect(() => {
+    !loginStatus && dispatch(actions.setLoginModal());
+  }, [dispatch, loginStatus]);
   return (
     <div>
-      <h1 className={classes.MainTitle}>No WishList Movies</h1>
+      {loginStatus ? main : (
+        <h1 className={classes.MainTitle}>Sign Up or Log In First</h1>
+      )}{' '}
+      >
     </div>
-  )
-}
+  );
+};
 
 export default WishList;

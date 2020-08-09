@@ -24,6 +24,8 @@ const CardsSlider = ({ movies, settings, title, link }) => {
         <Slider {...settings}>
           {movies.map((movie) => (
             <PosterCard
+              favMovie={movie}
+              wishListMovie={movie}
               src={ImgUrl(movie.poster_path)}
               title={movie.title}
               key={movie.id}
