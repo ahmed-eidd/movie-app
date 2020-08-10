@@ -9,7 +9,7 @@ const LogOut = () => {
   const guestSessionId = useSelector((state) => state.guestSession.guestId)
   return (
     <div className={classes.Container}>
-      <p>Welcome Guest</p>
+      <p>Welcome  <span>Guest</span></p>
       <Button type='grey' clicked={() => dispatch(actions.guestSessionDelete(guestSessionId)) }>Log Out</Button>
     </div>
   )

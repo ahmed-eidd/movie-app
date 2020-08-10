@@ -26,3 +26,16 @@
   margin-top: 1.8rem;
   margin-bottom: 1.5rem;
 }
+
+.spanNumbers {
+  position: absolute;
+  color: white;
+  background-color: var(--red-primary);
+  /* padding: .2rem; */
+  padding: 0 0.6rem;
+  border-radius: 500px;
+  font-size: 1.2rem;
+  top: 35%;
+  right: 20%;
+  font-weight: bold;
+}

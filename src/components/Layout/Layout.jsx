@@ -15,8 +15,10 @@ const Layout = ({ children }) => {
   // const [open, setOpen] = useState(false);
   const [loginTab, setLoginsTab] = useState('Sign Up');
 
-  const login = useSelector((state) => state.auth.loginStatus)
-  const open = useSelector((state) => state.auth.loginModal)
+  const login = useSelector((state) => state.auth.loginStatus);
+  const open = useSelector((state) => state.auth.loginModal);
+  const favouriteMovies = useSelector((state) => state.fav.favouritesMovies);
+  const wishListMovies = useSelector((state) => state.wishList.wishListMovies)
 
   let main = <main className={classes.Main}>{children}</main>;
 
@@ -45,7 +47,7 @@ const Layout = ({ children }) => {
         guestModeHandler={() => dispatch(actions.guestSessionFetch())}
       />
       <Logo />
-      <Nav />
+      <Nav wishlistCount={wishListMovies.length} favouritesCount={favouriteMovies.length}/>
       <Search /> 
       {
         !login ? ( <SignUp

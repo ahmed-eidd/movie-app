@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import NavItem from './NavItem/NavItem';
 import classes from './Nav.module.css';
 
-const Nav = (props) => {
-  useEffect(() => {
-    console.log(props);
-  }, []);
+const Nav = ({wishlistCount,favouritesCount}) => {
   return (
     <nav className={classes.Nav}>
       <p className={classes.Title}>Main</p>
@@ -27,9 +24,10 @@ const Nav = (props) => {
       <ul className={classes.NavList}>
         <NavItem link="/likes" icon="far fa-heart">
           Favourites
+          <span className={classes.spanNumbers}>{favouritesCount}</span>
         </NavItem>
         <NavItem link="/wishlist" icon="far fa-clock">
-          Wishlist
+          Wishlist <span className={classes.spanNumbers}>{wishlistCount}</span>
         </NavItem>
       </ul>
     </nav>
