@@ -88,6 +88,24 @@ const UIReducer = (state = initialState, action) => {
         loading: false,
         error: true
       }
+    case actionTypes.GET_DETAILS_FETCH_START:
+      return {
+        ...state,
+        loading: true,
+        error: false
+      }
+    case actionTypes.GET_DETAILS_RES:
+      return {
+        ...state,
+        loading: false,
+        error: false
+      }
+    case actionTypes.GET_DETAILS_ERR:
+      return {
+        ...state,
+        loading: false,
+        error: true
+      }
     default:
       return state;
   }

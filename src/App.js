@@ -11,19 +11,20 @@ import TopChart from './containers/TopChart/TopChart';
 import NewRelease from './containers/NewRelease/NewRelease';
 import Favourites from './containers/Favourites/Favourites';
 import WishList from './containers/WishList/WishList';
+import GetDetails from './components/GetDetails/GetDetails';
 import * as actions from './store/actions/index';
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.genreFetch());
-  },[]);
+  }, []);
 
   return (
     <div className="App">
       <Layout>
         <Switch>
-          <Route path="/categories/:genreType" component={SeeAll}/>
+          <Route path="/categories/:genreType" component={SeeAll} />
           <Route path="/seeall/:type" component={SeeAll} />
           <Route path="/" exact component={Home}></Route>
           <Route path="/categories" exact component={Categories} />
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/new" exact component={NewRelease} />
           <Route path="/likes" exact component={Favourites} />
           <Route path="/wishlist" exact component={WishList} />
+          <Route path="/details/:id" component={GetDetails} />
         </Switch>
       </Layout>
     </div>

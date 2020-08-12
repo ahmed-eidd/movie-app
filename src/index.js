@@ -17,6 +17,8 @@ import authReducer from './store/reducers/authReducer';
 import { BrowserRouter } from 'react-router-dom';
 import favMoviesReducer from './store/reducers/favMoviesReducer';
 import wishListMoviesReducer from './store/reducers/wishListMoviesReducer';
+import getDetailsReducer from './store/reducers/getDetailsReducer';
+
 
 const rootReducer = combineReducers({
   moviesHome: movieHomeReducer,
@@ -27,7 +29,8 @@ const rootReducer = combineReducers({
   guestSession: guestSessionReducer,
   fav: favMoviesReducer,
   wishList: wishListMoviesReducer,
-  auth: authReducer
+  auth: authReducer,
+  movieDetails: getDetailsReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
