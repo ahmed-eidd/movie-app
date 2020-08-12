@@ -15,12 +15,12 @@ const GetDetails = (props) => {
     movie && console.log(movie);
   }, [dispatch]);
 
-  const favouriteHandler = (id) => {
-    dispatch(actions.getFavMovies(id));
+  const favouriteHandler = (movie) => {
+    dispatch(actions.getFavMovies(movie));
   };
 
-  const wishListHandler = (id) => {
-    dispatch(actions.getWishListMovies(id));
+  const wishListHandler = (movie) => {
+    dispatch(actions.getWishListMovies(movie));
   };
 
   const ImgUrl = (link) => {
@@ -54,11 +54,11 @@ const GetDetails = (props) => {
           <div className={classes.detailsBtns}>
             <button
               className={classes.detailsBtn}
-              onClick={() => favouriteHandler(movie.id)}
+              onClick={() => favouriteHandler(movie)}
             >
               Favourites <i className="far fa-heart"></i>
             </button>
-            <button className={classes.detailsBtn} onClick={() => wishListHandler(movie.id)}>
+            <button className={classes.detailsBtn} onClick={() => wishListHandler(movie)}>
               Wishlist <i className="far fa-clock"></i>
             </button>
           </div>
