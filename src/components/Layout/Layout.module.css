@@ -17,11 +17,10 @@
   justify-content: center;
 }
 
-
 .ModalTabsButton {
   background: transparent;
   border: none;
-  color: white;
+  color: var(--font-color-primary);
   font-weight: bold;
   font-size: 1.6rem;
   margin-right: 2rem;

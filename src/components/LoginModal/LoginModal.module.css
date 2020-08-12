@@ -1,13 +1,7 @@
-
-
 .ModalTitle {
-  color: white;
+  color: var(--font-color-primary);
   font-size: 1.8rem;
-
 }
-
-
-
 
 .ModalForm {
   margin: 1rem auto;
@@ -21,7 +15,7 @@
 }
 
 .ModalFormInputs input::placeholder {
-  color: white;
+  color: var(--font-color-primary);
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -35,7 +29,7 @@
   border-bottom: 1px solid white;
   width: 80%;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
   color: var(--red-primary);
   font-size: 1.4rem;
   font-weight: 600;
@@ -47,10 +41,9 @@
 }
 
 .span {
-  color: white;
+  color: var(--font-color-primary);
   font-size: 1.6rem;
   font-weight: bold;
   display: block;
   margin: 2rem auto;
 }
-

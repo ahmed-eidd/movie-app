@@ -12,7 +12,7 @@
 
 .red {
   background-color: var(--red-primary);
-  color: white;
+  color: var(--font-color-primary);
 }
 
 .red:hover {
@@ -21,7 +21,7 @@
 
 .grey {
   background-color: var(--grey-light);
-  color: white;
+  color: var(--font-color-primary);
 }
 
 .grey:hover {

@@ -65,7 +65,7 @@
 
 .wishListBtn:hover,
 .likeBtn:hover {
-  color: white;
+  color: var(--font-color-primary);
 }
 
 /* .wishListBtn:hover ~ .likeBtn {
@@ -88,15 +88,20 @@
 
 .title {
   font-size: 1.4rem;
-  color: white;
+  color: var(--font-color-primary);
   justify-self: start;
   margin-left: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.title:hover {
+  color: var(--red-primary);
 }
 
 .genres {
   display: flex;
   list-style: none;
-  color:white;
+  color: white;
   justify-content: flex-start;
   align-items: center;
   width: 95%;
@@ -104,10 +109,9 @@
 }
 
 .genres li:not(:first-child) {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .genres li {
   font-size: 1.3rem;
-
 }

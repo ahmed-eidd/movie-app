@@ -29,7 +29,7 @@
 
 .spanNumbers {
   position: absolute;
-  color: white;
+  color: var(--font-color-primary);
   background-color: var(--red-primary);
   /* padding: .2rem; */
   padding: 0 0.6rem;

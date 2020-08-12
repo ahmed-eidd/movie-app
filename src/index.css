@@ -5,8 +5,9 @@
   /* --grey-dark: #3d3d3d; */
   /* --red-primary: #982825; */
   --red-primary: #ed4c67;
-  --grey-light:  	#808080;
+  --grey-light: #808080;
   --font-primary: 'Lato', sans-serif;
+  --font-color-primary: #ffffffff;
 }
 
 * {
@@ -34,6 +35,6 @@ body {
 }
 
 ::selection {
-  color: white;
+  color: var(--font-color-primary);
   background-color: var(--red-primary);
 }

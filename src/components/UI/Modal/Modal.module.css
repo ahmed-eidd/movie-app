@@ -13,8 +13,8 @@
   transition: all 0.4s ease-in-out;
 }
 
-.ModalContainer i{
-  color: white;
+.ModalContainer i {
+  color: var(--font-color-primary);
   cursor: pointer;
   font-size: 2rem;
   margin-left: auto;

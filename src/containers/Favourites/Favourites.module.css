@@ -1,5 +1,5 @@
 .MainTitle {
-  color: white;
+  color: var(--font-color-primary);
   font-size: 3rem;
   text-align: center;
   letter-spacing: 2px;

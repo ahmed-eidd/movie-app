@@ -6,7 +6,7 @@
   grid-row: 1/2;
   grid-column: 1/2;
   background-color: var(--red-primary);
-  color: white;
+  color: var(--font-color-primary);
   letter-spacing: 3px;
   display: flex;
   justify-content: center;

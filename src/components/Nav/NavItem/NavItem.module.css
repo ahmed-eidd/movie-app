@@ -2,7 +2,6 @@
   display: block;
   width: 100%;
   position: relative;
- 
 }
 
 .NavItem:hover a {
@@ -34,7 +33,7 @@
 }
 
 .NavItem a {
-  color: white;
+  color: var(--font-color-primary);
   font-family: var(--font-primary);
   font-size: 1.4rem;
   text-decoration: none;

@@ -6,10 +6,8 @@
   align-items: center;
 }
 
-p {
-  color: white;
+.Container p {
+  color: var(--font-color-primary);
   font-size: 1.4rem;
   font-weight: bold;
-
 }
-
