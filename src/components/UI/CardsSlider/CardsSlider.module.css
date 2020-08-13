@@ -1,8 +1,8 @@
-.trendingContainer {
+.Container {
   margin: 8rem auto;
 }
 
-.tredingTitleContainer {
+.TitleContainer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -35,13 +35,13 @@
   margin-left: 1rem;
 }
 
-.trendingTitle {
+.Title {
   font-size: 2rem;
   color: whitesmoke;
   letter-spacing: 2px;
 }
 
-.trendingPosterCont {
+.PosterCont {
   width: 90%;
   margin: 1rem auto;
 }

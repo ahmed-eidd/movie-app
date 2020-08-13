@@ -10,7 +10,7 @@ const Favourites = () => {
   const loginStatus = useSelector((state) => state.auth.loginStatus);
   const favMovies = useSelector((state) => state.fav.favouritesMovies);
   let main = <h1 className={classes.MainTitle}>No Favourites Movies</h1>;
-  if (favMovies) {
+  if (favMovies.length > 0) {
     main = <FullPage incomingMovies={favMovies} />
   }
   useEffect(() => {

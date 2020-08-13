@@ -11,19 +11,21 @@ const CardsSlider = ({ movies, settings, title, link }) => {
     return `https://image.tmdb.org/t/p/original${link}`;
   };
   return (
-    <div className={classes.trendingContainer}>
-      <div className={classes.tredingTitleContainer}>
-        <h2 className={classes.trendingTitle}>{title}</h2>
-
-        <Link to={link} className={classes.SeeAll}>
-          <p>See All</p>
-          <i className="fas fa-long-arrow-alt-right"></i>
-        </Link>
+    <div className={classes.Container}>
+      <div className={classes.TitleContainer}>
+        <h2 className={classes.Title}>{title}</h2>
+        {link && (
+          <Link to={link} className={classes.SeeAll}>
+            <p>See All</p>
+            <i className="fas fa-long-arrow-alt-right"></i>
+          </Link>
+        )}
       </div>
-      <div className={classes.trendingPosterCont}>
+      <div className={classes.PosterCont}>
         <Slider {...settings}>
           {movies.map((movie) => (
             <PosterCard
+              id={movie.id}
               favMovie={movie}
               wishListMovie={movie}
               src={ImgUrl(movie.poster_path)}

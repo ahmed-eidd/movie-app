@@ -83,16 +83,17 @@ const SeeAll = (props) => {
       <div className={classes.SeeAllContainer}>
         {movies.map((movie) => (
           <PosterCard
+            id={movie.id}
             favMovie={movie}
             wishListMovie={movie}
             src={ImgUrl(movie.poster_path)}
             title={movie.title}
             key={movie.id}
-            genre={movie.genre_ids.flatMap((g) =>
+            genre={movie.genre_ids ? movie.genre_ids.flatMap((g) =>
               genres
                 .filter((genre) => genre.id === g)
                 .map((r) => <li key={r.id}>{r.name},</li>)
-            )}
+            ) : ''}
           />
         ))}
       </div>

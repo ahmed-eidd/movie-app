@@ -1,9 +1,10 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
+import { Link } from 'react-router-dom';
 import classes from './PosterCard.module.css';
 import * as actions from '../../../store/actions/index';
 
-const PosterCard = ({ src, title, genre, favMovie,wishListMovie }) => {
+const PosterCard = ({ src, title, genre, favMovie,wishListMovie,id }) => {
   const dispatch = useDispatch();
   // a function to reduce the title if it has more than 17 character with convert the string into an array to use the reduce method on it and join it back to a string again
   const limitTitle = (name, limit = 17) => {
@@ -30,7 +31,7 @@ const PosterCard = ({ src, title, genre, favMovie,wishListMovie }) => {
         </button>
         <img src={src} alt={title} className={classes.posterImg} />
       </div>
-      <p className={classes.title}>{limitTitle(title)}</p>
+      <Link to={`/details/${id}`} className={classes.title}>{limitTitle(title)}</Link>
       <ul className={classes.genres}>{genre.slice(0, 2)}</ul>
     </div>
   );

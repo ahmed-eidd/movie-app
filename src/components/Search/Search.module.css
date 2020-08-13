@@ -28,3 +28,8 @@
   font-weight: bold;
   font-family: var(--font-primary);
 }
+
+.Input:focus {
+  border-bottom: 2px solid var(--red-primary);
+  color: var(--red-primary);
+}
