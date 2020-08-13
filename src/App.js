@@ -33,6 +33,7 @@ const App = () => {
           <Route path="/likes" exact component={Favourites} />
           <Route path="/wishlist" exact component={WishList} />
           <Route path="/details/:id" component={GetDetails} />
+          {/* <Route path="/categories/details/:id" component={GetDetails}/> */}
         </Switch>
       </Layout>
     </div>
