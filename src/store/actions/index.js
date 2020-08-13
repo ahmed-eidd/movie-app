@@ -6,4 +6,5 @@ export { guestSessionFetch, guestSessionDelete } from './guestSession';
 export { setLoginModal, setLoginStatus } from './auth';
 export { getFavMovies } from './getFavMovies';
 export { getWishListMovies } from './getWishListMovies';
-export { getDetailsFetch } from './getDetails';
+export { getDetailsFetch, getRecommendationsFetch } from './getDetails';
+export { searchFetch } from './search';

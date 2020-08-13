@@ -38,3 +38,30 @@ export const getDetailsFetch = (id) => {
       });
   };
 };
+
+export const getRecommendationsRes = (movies) => {
+  return {
+    type: actionTypes.GET_RECOMMENDATIONS_RES,
+    recommendations: movies,
+  };
+};
+
+export const getRecommendationsErr = () => {
+  return {
+    type: actionTypes.GET_RECOMMENDATIONS_ERR,
+  };
+};
+
+export const getRecommendationsFetch = (id) => {
+  return (dispatch) => {
+    const URL = `
+https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`;
+
+axios.get(URL).then((res) => {
+  dispatch(getRecommendationsRes(res.data.results))
+}).catch((err) => {
+  dispatch(getRecommendationsErr())
+})
+
+  };
+};
