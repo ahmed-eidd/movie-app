@@ -15,9 +15,10 @@ const GetDetails = (props) => {
   const genres = useSelector((state) => state.moviesHome.genres);
   const dispatch = useDispatch();
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(actions.getDetailsFetch(props.match.params.id));
     dispatch(actions.getRecommendationsFetch(props.match.params.id));
-  }, [dispatch,props.match.params.id]);
+  }, [dispatch, props.match.params.id]);
 
   const favouriteHandler = (movie) => {
     dispatch(actions.getFavMovies(movie));
