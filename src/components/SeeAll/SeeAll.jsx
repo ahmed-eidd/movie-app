@@ -33,24 +33,10 @@ const SeeAll = (props) => {
   useEffect(() => {
     window.scrollTo(0,0);
     // window.pageYOffset() === '0'
-    document.body.scrollTo = 0;
+    // document.body.scrollTo = 0;
     console.log(props);
 
-    // switch Statement to check the match.params.type if its for trending or now playing page
 
-    // switch (props) {
-    //   case 'trendingnow':
-    //     dispatch(actions.movieFetch());
-    //     break;
-    //   case 'nowplaying':
-    //     dispatch(actions.nowPlaying());
-    //     break;
-    //   case searchGenre(props.match.params.genreType,genres):
-    //     dispatch(actions.categoriesFecth(props.match.params.genreType))
-    //     break;
-    //   default:
-    //     return;
-    // }
     if (type === 'trendingnow') {
       dispatch(actions.movieFetch());
     } else if (type === 'nowplaying') {

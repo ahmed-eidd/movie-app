@@ -14,6 +14,7 @@ import topChartReducer from './store/reducers/topChartReducer';
 import newRelaseReducer from './store/reducers/newReleaseReducer';
 import guestSessionReducer from './store/reducers/guestSessionReducer';
 import authReducer from './store/reducers/authReducer';
+import searchReducer from './store/reducers/searchReducer';
 import { BrowserRouter } from 'react-router-dom';
 import favMoviesReducer from './store/reducers/favMoviesReducer';
 import wishListMoviesReducer from './store/reducers/wishListMoviesReducer';
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
   fav: favMoviesReducer,
   wishList: wishListMoviesReducer,
   auth: authReducer,
-  movieDetails: getDetailsReducer
+  movieDetails: getDetailsReducer,
+  searchRes: searchReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

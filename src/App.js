@@ -11,8 +11,10 @@ import TopChart from './containers/TopChart/TopChart';
 import NewRelease from './containers/NewRelease/NewRelease';
 import Favourites from './containers/Favourites/Favourites';
 import WishList from './containers/WishList/WishList';
+import SearchResults from './containers/SearchResults/SearchResults';
 import GetDetails from './components/GetDetails/GetDetails';
 import * as actions from './store/actions/index';
+import searchReducer from './store/reducers/searchReducer';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,6 +34,7 @@ const App = () => {
           <Route path="/new" exact component={NewRelease} />
           <Route path="/likes" exact component={Favourites} />
           <Route path="/wishlist" exact component={WishList} />
+          <Route path="/search/:query" component={SearchResults} />
           <Route path="/details/:id" component={GetDetails} />
           {/* <Route path="/categories/details/:id" component={GetDetails}/> */}
         </Switch>
