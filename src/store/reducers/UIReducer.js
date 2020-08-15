@@ -106,6 +106,24 @@ const UIReducer = (state = initialState, action) => {
         loading: false,
         error: true
       }
+    case actionTypes.SEARCH_FETCH_START:
+      return {
+        ...state,
+        loading: true,
+        error: false
+      }
+    case actionTypes.SEARCH_RES:
+      return {
+        ...state,
+        loading: false,
+        error: false
+      }
+    case actionTypes.SEARCH_ERR:
+      return {
+        ...state,
+        loading: false,
+        error: true
+      }
     default:
       return state;
   }
