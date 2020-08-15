@@ -4,16 +4,16 @@ import Spinner from '../UI/Spinner/Spinner';
 import PosterCard from '../UI/PosterCard/PosterCard';
 import * as actions from '../../store/actions/index';
 import { withRouter } from 'react-router-dom';
-import classes from './SeeAll.module.css';
+import classes from './FullPage.module.css';
 
 const SeeAll = (props) => {
-  const searchGenre = (nameKey, myArray) => {
-    for (let i = 0; i < myArray.length; i++) {
-      if (myArray[i].id.toString() === nameKey) {
-        return myArray[i].id.toString();
-      }
-    }
-  };
+  // const searchGenre = (nameKey, myArray) => {
+  //   for (let i = 0; i < myArray.length; i++) {
+  //     if (myArray[i].id.toString() === nameKey) {
+  //       return myArray[i].id.toString();
+  //     }
+  //   }
+  // };
 
   // Dispatch Hook
   const dispatch = useDispatch();

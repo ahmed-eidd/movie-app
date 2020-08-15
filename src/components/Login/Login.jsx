@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../UI/Button/Button';
-import classes from './SignUp.module.css';
+import classes from './Login.module.css';
 
 const SignUp = ({signBtnHandler,loginBtnHandler,active}) => {
 

@@ -6,7 +6,7 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import Home from './containers/Home/Home';
 import Categories from './containers/Categories/Categories';
-import SeeAll from './components/SeeAll/SeeAll';
+import FullPage from './components/FullPage/FullPage';
 import TopChart from './containers/TopChart/TopChart';
 import NewRelease from './containers/NewRelease/NewRelease';
 import Favourites from './containers/Favourites/Favourites';
@@ -26,8 +26,8 @@ const App = () => {
     <div className="App">
       <Layout>
         <Switch>
-          <Route path="/categories/:genreType" component={SeeAll} />
-          <Route path="/seeall/:type" component={SeeAll} />
+          <Route path="/categories/:genreType" component={FullPage} />
+          <Route path="/seeall/:type" component={FullPage} />
           <Route path="/" exact component={Home}></Route>
           <Route path="/categories" exact component={Categories} />
           <Route path="/top" exact component={TopChart} />

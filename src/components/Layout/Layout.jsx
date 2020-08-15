@@ -4,12 +4,13 @@ import classes from './Layout.module.css';
 import Logo from '../UI/Logo/Logo';
 import Nav from '../Nav/Nav';
 import Search from '../Search/Search';
-import SignUp from '../SignUp/SignUp';
+import SignUp from '../Login/Login';
 import LoginModal from '../LoginModal/LoginModal';
 import LogOut from '../LogOut/LogOut';
 import * as actions from '../../store/actions/index';
 
-const Layout = ({ children }) => {
+const Layout = ({ children,clearInput }) => {
+
   const dispatch = useDispatch();
   // const [login,setLogin] = useState(false);
   // const [open, setOpen] = useState(false);
@@ -48,7 +49,7 @@ const Layout = ({ children }) => {
       />
       <Logo />
       <Nav wishlistCount={wishListMovies.length} favouritesCount={favouriteMovies.length}/>
-      <Search /> 
+      <Search clear={clearInput}/> 
       {
         !login ? ( <SignUp
         loginBtnHandler={handlingLoginBtn}

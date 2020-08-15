@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import LoginModalBtns from './LoginModalBtns/LoginModalBtns';
 import Button from '../UI/Button/Button';
 import classes from './LoginModal.module.css';
@@ -14,7 +14,9 @@ const LoginModal = ({
 
   
 
-
+  useEffect(() => {
+    console.log('Login Modal has been renderned')
+  },[])
 
 
   // Login Mini Component

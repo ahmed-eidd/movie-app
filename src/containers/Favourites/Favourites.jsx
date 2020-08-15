@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import FullPage from '../../components/SeeAll/SeeAll';
+import FullPage from '../../components/FullPage/FullPage';
 import * as actions from '../../store/actions/index';
 import classes from './Favourites.module.css';
 

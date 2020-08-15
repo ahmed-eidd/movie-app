@@ -1,0 +1,12 @@
+.title {
+  color: var(--font-color-primary);
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+
+.noResultTitle {
+  color: var(--font-color-primary);
+  text-align: center;
+  font-size: 1.8rem;
+
+}
