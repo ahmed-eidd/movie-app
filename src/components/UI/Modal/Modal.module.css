@@ -2,8 +2,9 @@
   width: 40rem;
   z-index: 500;
   position: fixed;
-  bottom: 30%;
-  left: 42%;
+  bottom: 15vh;
+  left: 40vw;
+  transform: translateX(-50%);
   background-color: var(--grey-dark);
   display: flex;
   flex-direction: column;

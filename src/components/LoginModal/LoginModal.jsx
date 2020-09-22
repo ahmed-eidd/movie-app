@@ -46,7 +46,7 @@ const LoginModal = ({
   const SignUp = (
     <React.Fragment>
       <h3 className={classes.ModalTitle}>Join Movie Box</h3>{' '}
-      <LoginModalBtns clicked={ModalTabHandler} active={loginTab} />}
+      <LoginModalBtns clicked={ModalTabHandler} active={loginTab} />
       <form className={classes.ModalForm}>
         <div className={classes.ModalFormInputs}>
           {/* <label htmlFor="usename">Username</label> */}
