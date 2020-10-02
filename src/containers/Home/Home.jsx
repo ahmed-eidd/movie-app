@@ -29,7 +29,7 @@ const Home = () => {
 
   // a Function that gets called on every img to get image
   const ImgUrl = (link) => {
-    return `https://image.tmdb.org/t/p/original${link}`;
+    return `https://image.tmdb.org/t/p/w500${link}`;
   };
 
 
