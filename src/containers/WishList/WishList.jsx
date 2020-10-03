@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FullPage from '../../components/FullPage/FullPage';
-import classes from './WishList.module.css';
+import classes from './WishList.module.scss';
 import * as actions from '../../store/actions/index';
 
 const WishList = () => {

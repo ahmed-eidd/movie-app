@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import classes from './Modal.module.css';
+import classes from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
 
-const Modal = ({ children, show, backdropHandler,clicked }) => {
+const Modal = ({ children, show, backdropHandler, clicked }) => {
   return (
     <React.Fragment>
       <Backdrop show={show} clicked={backdropHandler} />

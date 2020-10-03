@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import classes from './CardsSlider.module.css';
+import classes from './CardsSlider.module.scss';
 import Slider from 'react-slick';
 import PosterCard from '../PosterCard/PosterCard';
 import { Link } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import classes from './TopChart.module.css';
+import classes from './TopChart.module.scss';
 import FullPage from '../../components/FullPage/FullPage';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';

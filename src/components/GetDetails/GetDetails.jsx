@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import classes from './GetDetails.module.css';
+import classes from './GetDetails.module.scss';
 import Spinner from '../UI/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';

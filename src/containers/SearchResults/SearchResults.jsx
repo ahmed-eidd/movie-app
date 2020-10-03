@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import FullPage from '../../components/FullPage/FullPage';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import classes from './SearchResults.module.css';
+import classes from './SearchResults.module.scss';
 
 const SearchResults = (props) => {
   const searchResult = useSelector((state) => state.searchRes.results);

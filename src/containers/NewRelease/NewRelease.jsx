@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import classes from './NewRelease.module.css';
+import classes from './NewRelease.module.scss';
 import FullPage from '../../components/FullPage/FullPage';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';

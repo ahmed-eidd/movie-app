@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import classes from './Search.module.css';
+import classes from './Search.module.scss';
 import * as actions from '../../store/actions/index';
 
 const Search = (props) => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
   const clear = () => {
-    setInput('')
-  }
+    setInput('');
+  };
   // useEffect(() => {
   //   return () => {
   //     setInput('')
@@ -22,11 +22,10 @@ const Search = (props) => {
         dispatch(actions.searchFetch(input));
         e.preventDefault();
         props.history.push(`/search/${input}`);
-        e.target.elements.text.value = ''
+        e.target.elements.text.value = '';
       }}
     >
       <input
-
         className={classes.Input}
         name="text"
         autoComplete="off"

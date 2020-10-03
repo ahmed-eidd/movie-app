@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import './App.css';
+
 import Layout from './components/Layout/Layout';
 import Home from './containers/Home/Home';
 import Categories from './containers/Categories/Categories';

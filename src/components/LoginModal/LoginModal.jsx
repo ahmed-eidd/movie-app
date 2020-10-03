@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import LoginModalBtns from './LoginModalBtns/LoginModalBtns';
 import Button from '../UI/Button/Button';
-import classes from './LoginModal.module.css';
+import classes from './LoginModal.module.scss';
 import Modal from '../UI/Modal/Modal';
 
 const LoginModal = ({

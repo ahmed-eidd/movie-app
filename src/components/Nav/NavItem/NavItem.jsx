@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './NavItem.module.css';
+import classes from './NavItem.module.scss';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
@@ -8,7 +8,6 @@ const NavItem = (props) => {
 
   if (props.location.pathname === props.link) {
     attachedClasses = [classes.before, classes.linkActive].join(' ');
-
   }
 
   return (

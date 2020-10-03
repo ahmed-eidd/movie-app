@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch,useSelector } from 'react-redux'
-import classes from './Layout.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import classes from './Layout.module.scss';
 import Logo from '../UI/Logo/Logo';
 import Nav from '../Nav/Nav';
 import Search from '../Search/Search';
@@ -9,8 +9,7 @@ import LoginModal from '../LoginModal/LoginModal';
 import LogOut from '../LogOut/LogOut';
 import * as actions from '../../store/actions/index';
 
-const Layout = ({ children,clearInput }) => {
-
+const Layout = ({ children, clearInput }) => {
   const dispatch = useDispatch();
   // const [login,setLogin] = useState(false);
   // const [open, setOpen] = useState(false);
@@ -19,27 +18,26 @@ const Layout = ({ children,clearInput }) => {
   const login = useSelector((state) => state.auth.loginStatus);
   const open = useSelector((state) => state.auth.loginModal);
   const favouriteMovies = useSelector((state) => state.fav.favouritesMovies);
-  const wishListMovies = useSelector((state) => state.wishList.wishListMovies)
+  const wishListMovies = useSelector((state) => state.wishList.wishListMovies);
 
   let main = <main className={classes.Main}>{children}</main>;
 
   const handlingLoginBtn = () => {
     // setOpen(true);
-    dispatch(actions.setLoginModal())
+    dispatch(actions.setLoginModal());
     setLoginsTab('Log In');
   };
   const handlingSignBtn = () => {
     // setOpen(true);
-    dispatch(actions.setLoginModal())
+    dispatch(actions.setLoginModal());
     setLoginsTab('Sign Up');
   };
   const handlingModal = () => {
     // setOpen(!open);
-    dispatch(actions.setLoginModal())
+    dispatch(actions.setLoginModal());
   };
   return (
     <div className={classes.Layout}>
-     
       <LoginModal
         modalHandler={handlingModal}
         showModal={open}
@@ -48,15 +46,20 @@ const Layout = ({ children,clearInput }) => {
         guestModeHandler={() => dispatch(actions.guestSessionFetch())}
       />
       <Logo />
-      <Nav wishlistCount={wishListMovies.length} favouritesCount={favouriteMovies.length}/>
-      <Search clear={clearInput}/> 
-      {
-        !login ? ( <SignUp
-        loginBtnHandler={handlingLoginBtn}
-        signBtnHandler={handlingSignBtn}
-      />) : <LogOut/>
-      }
-     
+      <Nav
+        wishlistCount={wishListMovies.length}
+        favouritesCount={favouriteMovies.length}
+      />
+      <Search clear={clearInput} />
+      {!login ? (
+        <SignUp
+          loginBtnHandler={handlingLoginBtn}
+          signBtnHandler={handlingSignBtn}
+        />
+      ) : (
+        <LogOut />
+      )}
+
       {main}
     </div>
   );

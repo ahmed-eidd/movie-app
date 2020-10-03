@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/index';
-import classes from './Home.module.css';
+import classes from './Home.module.scss';
 import Slider from 'react-slick';
 import HomeSlider from './HomeSlider/HomeSlider';
 import PosterCard from '../../components/UI/PosterCard/PosterCard';
@@ -32,7 +32,6 @@ const Home = () => {
     return `https://image.tmdb.org/t/p/w500${link}`;
   };
 
-
   // React Slick Settings for the Header Slider
   const settings = {
     dots: false,
@@ -43,9 +42,7 @@ const Home = () => {
     speed: 500,
     slidestoshow: 1,
     slidestoscroll: 1,
- 
   };
-
 
   // React Slick Settings for the Cards sections
   const cardsSettings = {
@@ -74,7 +71,9 @@ const Home = () => {
             {movies.map((movie) => (
               <HomeSlider
                 genre={movie.genre_ids.flatMap((g) =>
-                genres.filter((genre) => genre.id === g).map((r) => <li key={r.id}>{r.name}</li>)
+                  genres
+                    .filter((genre) => genre.id === g)
+                    .map((r) => <li key={r.id}>{r.name}</li>)
                 )}
                 src={ImgUrl(movie.backdrop_path)}
                 title={movie.title}
@@ -84,14 +83,14 @@ const Home = () => {
             ))}
           </Slider>
         </div>
-    
+
         <CardsSlider
           settings={cardsSettings}
           movies={movies}
           title="Trending Now"
           link="/seeall/trendingnow"
         />
-        
+
         <CardsSlider
           settings={cardsSettings}
           movies={nowPlaying}
@@ -106,6 +105,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import NavItem from './NavItem/NavItem';
-import classes from './Nav.module.css';
+import classes from './Nav.module.scss';
 
-const Nav = ({wishlistCount,favouritesCount}) => {
+const Nav = ({ wishlistCount, favouritesCount }) => {
   return (
     <nav className={classes.Nav}>
       <p className={classes.Title}>Main</p>

@@ -4,7 +4,7 @@ import Spinner from '../UI/Spinner/Spinner';
 import PosterCard from '../UI/PosterCard/PosterCard';
 import * as actions from '../../store/actions/index';
 import { withRouter } from 'react-router-dom';
-import classes from './FullPage.module.css';
+import classes from './FullPage.module.scss';
 
 const SeeAll = (props) => {
   // const searchGenre = (nameKey, myArray) => {
@@ -31,11 +31,10 @@ const SeeAll = (props) => {
 
   // useEffect for fetching
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     // window.pageYOffset() === '0'
     // document.body.scrollTo = 0;
     console.log(props);
-
 
     if (type === 'trendingnow') {
       dispatch(actions.movieFetch());
@@ -44,7 +43,6 @@ const SeeAll = (props) => {
     } else if (genreType) {
       dispatch(actions.categoriesFecth(genreType));
     } else {
-
     }
   }, [genreType, dispatch, genres]);
 
@@ -75,11 +73,15 @@ const SeeAll = (props) => {
             src={ImgUrl(movie.poster_path)}
             title={movie.title}
             key={movie.id}
-            genre={movie.genre_ids ? movie.genre_ids.flatMap((g) =>
-              genres
-                .filter((genre) => genre.id === g)
-                .map((r) => <li key={r.id}>{r.name},</li>)
-            ) : ''}
+            genre={
+              movie.genre_ids
+                ? movie.genre_ids.flatMap((g) =>
+                    genres
+                      .filter((genre) => genre.id === g)
+                      .map((r) => <li key={r.id}>{r.name},</li>)
+                  )
+                : ''
+            }
           />
         ))}
       </div>

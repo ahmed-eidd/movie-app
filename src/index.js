@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 // import store from './app/store';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
@@ -20,7 +20,6 @@ import favMoviesReducer from './store/reducers/favMoviesReducer';
 import wishListMoviesReducer from './store/reducers/wishListMoviesReducer';
 import getDetailsReducer from './store/reducers/getDetailsReducer';
 
-
 const rootReducer = combineReducers({
   moviesHome: movieHomeReducer,
   categories: categoriesReducer,
@@ -32,7 +31,7 @@ const rootReducer = combineReducers({
   wishList: wishListMoviesReducer,
   auth: authReducer,
   movieDetails: getDetailsReducer,
-  searchRes: searchReducer
+  searchRes: searchReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
