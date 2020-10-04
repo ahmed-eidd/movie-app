@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .Button {
   border: none;
   padding: 1rem 2rem;
@@ -11,7 +13,7 @@
 }
 
 .red {
-  background-color: var(--red-primary);
+  background-color: $red-primary;
   color: var(--font-color-primary);
 }
 
