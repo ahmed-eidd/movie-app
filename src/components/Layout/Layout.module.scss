@@ -9,6 +9,10 @@
   background-color: var(--grey-dark);
   min-height: 50rem;
   position: relative;
+  @media only screen and (max-width: $bp-medium) {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .Main {
@@ -17,6 +21,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/4;
+  }
 }
 
 .ModalTabsButton {
