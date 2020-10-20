@@ -21,22 +21,25 @@ export const topChartErr = () => {
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const topChart = () => {
-  return (dispatch) => {
-    dispatch(topChartStart())
+  return {
+    type: actionTypes.TOP_CHART_FETCH
+  }
+  // return (dispatch) => {
+  //   dispatch(topChartStart())
     
-    const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
+  //   const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
     
-    axios
-      .get(
-        URL
-      )
-      .then((res) => {
-        console.log(res.data);
-        dispatch(topChartRes(res.data.results));
-      })
-      .catch((err) => {
-        console.log(err);
-        dispatch(topChartErr());
-      });
-  };
+  //   axios
+  //     .get(
+  //       URL
+  //     )
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       dispatch(topChartRes(res.data.results));
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       dispatch(topChartErr());
+  //     });
+  // };
 };

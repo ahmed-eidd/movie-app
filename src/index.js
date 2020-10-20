@@ -20,6 +20,11 @@ import favMoviesReducer from './store/reducers/favMoviesReducer';
 import wishListMoviesReducer from './store/reducers/wishListMoviesReducer';
 import getDetailsReducer from './store/reducers/getDetailsReducer';
 
+// Redux Saga 
+
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './store/Sagas/saga';
+
 const rootReducer = combineReducers({
   moviesHome: movieHomeReducer,
   categories: categoriesReducer,
@@ -36,10 +41,14 @@ const rootReducer = combineReducers({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const sagaMiddleware = createSagaMiddleware();
+
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
+  composeEnhancers(applyMiddleware(thunk,sagaMiddleware))
 );
+
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <React.StrictMode>
