@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,  } from 'react';
 import { useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import classes from './Search.module.scss';
@@ -7,9 +7,9 @@ import * as actions from '../../store/actions/index';
 const Search = (props) => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
-  const clear = () => {
-    setInput('');
-  };
+  // const clear = () => {
+  //   setInput('');
+  // };
   // useEffect(() => {
   //   return () => {
   //     setInput('')

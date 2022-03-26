@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import FullPage from '../../components/FullPage/FullPage';

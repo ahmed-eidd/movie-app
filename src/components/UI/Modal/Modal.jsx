@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
 
@@ -13,7 +13,7 @@ const Modal = ({ children, show, backdropHandler, clicked }) => {
           opacity: show ? '1' : '0',
         }}
       >
-        <i className="fas fa-times" onClick={clicked}></i>
+        <i className='fas fa-times' onClick={clicked}></i>
         {children}
       </div>
     </React.Fragment>

@@ -7,6 +7,7 @@ const initialState = {
 
 
 const favMoviesReducer = (state = initialState, action) => {
+  console.log('fav',action.favMovie)
   switch (action.type) {
     case actionTypes.GET_FAV_MOVIES:
       if (!state.favouritesMovies.some((el) => el.id === action.favMovie.id)) {

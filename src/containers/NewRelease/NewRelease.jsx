@@ -13,7 +13,7 @@ const TopChart = () => {
 
   useEffect(() => {
     dispatch(actions.newReleaseFetch());
-  }, []);
+  }, [dispatch]);
 
   let main = <Spinner />;
 

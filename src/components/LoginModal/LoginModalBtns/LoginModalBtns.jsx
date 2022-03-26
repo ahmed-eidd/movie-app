@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './LoginModalBtns.module.scss';
-import LoginModal from '../LoginModal';
+// import LoginModal from '../LoginModal';
 
 const LoginModalTabs = ({ clicked, children, active }) => {
   // signActive and loginActive to show which tab is active

@@ -4,7 +4,7 @@ import * as actions from '../../store/actions/index';
 import classes from './Home.module.scss';
 import Slider from 'react-slick';
 import HomeSlider from './HomeSlider/HomeSlider';
-import PosterCard from '../../components/UI/PosterCard/PosterCard';
+// import PosterCard from '../../components/UI/PosterCard/PosterCard';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import CardsSlider from '../../components/UI/CardsSlider/CardsSlider';
 
@@ -25,7 +25,7 @@ const Home = () => {
     // dispatch(actions.genreFetch());
     dispatch(actions.nowPlaying());
     console.log(genres);
-  }, []);
+  }, [dispatch, genres]);
 
   // a Function that gets called on every img to get image
   const ImgUrl = (link) => {
@@ -87,15 +87,15 @@ const Home = () => {
         <CardsSlider
           settings={cardsSettings}
           movies={movies}
-          title="Trending Now"
-          link="/seeall/trendingnow"
+          title='Trending Now'
+          link='/seeall/trendingnow'
         />
 
         <CardsSlider
           settings={cardsSettings}
           movies={nowPlaying}
-          title="Now Playing"
-          link="seeall/nowplaying"
+          title='Now Playing'
+          link='seeall/nowplaying'
           genres={genres}
         />
       </div>

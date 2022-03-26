@@ -13,7 +13,7 @@ const TopChart = () => {
 
   useEffect(() => {
     dispatch(actions.topChart());
-  }, []);
+  }, [dispatch]);
 
   let main = <Spinner />;
 

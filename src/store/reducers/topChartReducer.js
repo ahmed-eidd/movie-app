@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import { topChartErr } from '../actions/topChart';
+// import { topChartErr } from '../actions/topChart';
 
 const initialState = {
   topChart: []

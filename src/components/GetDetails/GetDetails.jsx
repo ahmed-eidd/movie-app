@@ -12,7 +12,6 @@ const GetDetails = (props) => {
   const recommendations = useSelector(
     (state) => state.movieDetails.recommendations
   );
-  const genres = useSelector((state) => state.moviesHome.genres);
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);

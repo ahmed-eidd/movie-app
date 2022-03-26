@@ -44,7 +44,7 @@ const SeeAll = (props) => {
       dispatch(actions.categoriesFecth(genreType));
     } else {
     }
-  }, [genreType, dispatch, genres]);
+  }, [genreType, dispatch, genres, props, type]);
 
   // Conditional for which movies to render
   if (props.match.params.type === 'trendingnow') {
