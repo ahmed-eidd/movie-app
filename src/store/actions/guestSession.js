@@ -59,10 +59,9 @@ export const guestSessionDelete = (id) => {
       })
       .then((res) => {
         dispatch(guestSessionLogOut());
-        console.log('it worked');
       })
       .catch((err) => {
-        console.log(err, id);
+        // console.log(err, id);
       });
   };
 };

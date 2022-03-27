@@ -13,6 +13,7 @@ import WishList from './containers/WishList/WishList';
 import SearchResults from './containers/SearchResults/SearchResults';
 import GetDetails from './components/GetDetails/GetDetails';
 import * as actions from './store/actions/index';
+import FindMeMovie from './containers/FindMeMovie/FindMeMovie';
 // import searchReducer from './store/reducers/searchReducer';
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/wishlist' exact component={WishList} />
           <Route path='/search/:query' component={SearchResults} />
           <Route path='/details/:id' component={GetDetails} />
+          <Route path='/find-me-movie' exact component={FindMeMovie} />
           {/* <Route path="/categories/details/:id" component={GetDetails}/> */}
         </Switch>
       </Layout>

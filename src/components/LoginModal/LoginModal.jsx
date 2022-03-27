@@ -15,7 +15,7 @@ const LoginModal = ({
   
 
   useEffect(() => {
-    console.log('Login Modal has been renderned')
+    // console.log('Login Modal has been renderned')
   },[])
 
 

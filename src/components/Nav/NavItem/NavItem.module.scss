@@ -42,6 +42,7 @@
   display: block;
   font-weight: bold;
   padding: 1.5rem 4rem;
+  padding-right: 3rem;
   display: flex;
   transition: all 0.2s ease-in-out;
   align-items: center;
@@ -54,4 +55,13 @@
 
 .active {
   color: var(--red-primary) !important;
+}
+
+.NavItem__NewSign {
+  position: absolute;
+  color: $font-color-primary;
+  background-color: $red-primary;
+  padding: 0.2rem 0.5rem;
+  top: 0;
+  right: 0;
 }

@@ -31,11 +31,9 @@ export const topChart = () => {
         URL
       )
       .then((res) => {
-        console.log(res.data);
         dispatch(topChartRes(res.data.results));
       })
       .catch((err) => {
-        console.log(err);
         dispatch(topChartErr());
       });
   };

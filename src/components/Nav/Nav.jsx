@@ -19,6 +19,9 @@ const Nav = ({ wishlistCount, favouritesCount }) => {
         <NavItem link='/new' icon='far fa-newspaper'>
           New Release
         </NavItem>
+        <NavItem newSign link='/find-me-movie' icon='fas fa-gifts'>
+          Find Me a Movie
+        </NavItem>
       </ul>
       <p className={classes.Title}>User</p>
       <ul className={classes.NavList}>

@@ -30,7 +30,6 @@ export const searchFetch = (query) => {
     axios
       .get(URL)
       .then((res) => {
-        console.log(res);
         dispatch(searchRes(res.data.results));
       })
       .catch((err) => {

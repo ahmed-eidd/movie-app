@@ -34,7 +34,7 @@ const SeeAll = (props) => {
     window.scrollTo(0, 0);
     // window.pageYOffset() === '0'
     // document.body.scrollTo = 0;
-    console.log(props);
+    // console.log(props);
 
     if (type === 'trendingnow') {
       dispatch(actions.movieFetch());

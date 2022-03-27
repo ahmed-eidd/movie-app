@@ -29,11 +29,9 @@ export const getDetailsFetch = (id) => {
     axios
       .get(URL)
       .then((res) => {
-        console.log(res);
         dispatch(getDetailsRes(res.data));
       })
       .catch((err) => {
-        console.log(err);
         dispatch(getDetailsErr());
       });
   };

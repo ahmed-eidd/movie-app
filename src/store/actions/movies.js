@@ -31,11 +31,9 @@ export const movieFetch = () => {
         URL
       )
       .then((res) => {
-        console.log(res.data);
         dispatch(movieFetchRes(res.data.results));
       })
       .catch((err) => {
-        console.log(err);
         dispatch(movieFetchErr());
       });
   };
@@ -66,7 +64,6 @@ export const genreFetch = () => {
     const URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
     axios.get(URL).then((res) => {
       dispatch(genreFetchRes(res.data.genres))
-      console.log(res.data.genres)
 
     }
     ).catch(() => {
@@ -103,10 +100,8 @@ export const nowPlaying = (pageNum) => {
 
     axios.get(URL).then((res) => {
       dispatch(nowPlayingRes(res.data.results))
-      console.log(res.data.results)
     }).catch((err) => {
       dispatch(nowPlayingError())
-      console.log(err)
     })
   }
 }

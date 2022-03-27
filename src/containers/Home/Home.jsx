@@ -20,11 +20,10 @@ const Home = () => {
 
   // useEffect Fecthing
   useEffect(() => {
-    console.log();
     dispatch(actions.movieFetch());
     // dispatch(actions.genreFetch());
     dispatch(actions.nowPlaying());
-    console.log(genres);
+    // console.log(genres);
   }, [dispatch, genres]);
 
   // a Function that gets called on every img to get image
