@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Button = ({
   variant = 'colored',
-  type,
+  type = 'red',
   clicked,
   children,
   to,
   as = 'button',
+  disabled,
 }) => {
   let btnVariant = null;
   let btnType = null;
@@ -38,6 +39,7 @@ const Button = ({
   const sharedBtnProps = {
     onClick: clicked,
     className: [btnVariant, variant === 'colored' && btnType].join(' '),
+    disabled: disabled,
   };
 
   return (
@@ -48,7 +50,6 @@ const Button = ({
         <Link {...sharedBtnProps} to={to}>
           {children}
         </Link>
-     
       )}
     </>
   );

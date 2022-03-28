@@ -1,0 +1,21 @@
+@import 'variables.scss';
+
+.FindMeMovie {
+  height: 100%;
+  width: 100%;
+  color: $font-color-primary;
+  padding: 4rem;
+  &__Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  &__Title {
+    font-size: 2rem;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

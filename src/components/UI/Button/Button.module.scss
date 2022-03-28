@@ -26,6 +26,10 @@
   &:hover {
     background-color: darkgrey;
   }
+
+  &:disabled {
+    background-color: $black-dark;
+  }
 }
 
 .Filled {
@@ -37,6 +41,8 @@
   transition: all 0.3s ease-in-out;
   padding: 1rem 2rem;
   text-decoration: none;
+  background: transparent;
+  border: none;
   &:hover {
     background-color: var(--red-primary);
     transform: translateY(-3px);

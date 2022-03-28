@@ -1,0 +1,12 @@
+.GenreStep {
+  &__Genres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    width: 80%;
+    margin: 6rem auto;
+    list-style: none;
+    justify-content: center;
+    row-gap: 3rem;
+    column-gap: 3rem;
+  }
+}

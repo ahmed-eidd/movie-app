@@ -1,0 +1,75 @@
+@import 'variables';
+
+$gap: 10rem;
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.Animation {
+  flex-direction: row;
+  direction: ltr;
+  will-change: transform;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: stretch;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  outline: none;
+  margin-top: 2rem;
+}
+
+.ProgressBar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  // gap: $gap;
+  align-items: flex-start;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  &__Step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    width: 5rem;
+
+    &__Bar {
+      width: calc(#{$gap} - 1rem);
+      height: 2px;
+      background-color: $font-color-primary;
+      transform: translateY(12px);
+      &__complete {
+        background-color: $red-primary;
+      }
+    }
+
+    &__Number {
+      background-color: $red-primary;
+      width: 25px;
+      height: 25px;
+      border-radius: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__Name {
+    }
+  }
+}
