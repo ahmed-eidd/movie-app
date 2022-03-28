@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../../components/UI/Button/Button';
 import MultiStepForm from '../../components/UI/MultiStepForm/MultiStepForm';
 import classes from './FindMeMovie.module.scss';
@@ -6,18 +6,28 @@ import GenreStep from './GenreStep/GenreStep';
 import LanguageStep from './LanguageStep/LanguageStep';
 import PopularStep from './PopularStep/PopularStep';
 import RatingStep from './RatingStep/RatingStep';
+import RecommendationStep from './RecommendationStep/RecommendationStep';
 import WelcomeStep from './WelcomeStep/WelcomeStep';
 import YearStep from './YearStep/YearStep';
 
 const FindMeMovie = () => {
   const [step, setStep] = useState(0);
+  const [steps, setSteps] = useState([
+    'Genre',
+    'Language',
+    'Rating',
+    'Popular',
+    'Year',
+  ]);
   const [progressStep, setProgressStep] = useState(0);
+  const [fetchMovie, setFetchMovie] = useState(false);
   const [data, setData] = useState({});
 
   const onGoBackHandler = (modifyProgress) => {
     if (step <= 1) return;
     if (modifyProgress) setProgressStep(progressStep - 1);
     setStep(step - 1);
+    setFetchMovie(false);
   };
 
   const onNextHandler = (modifyProgress) => {
@@ -25,7 +35,11 @@ const FindMeMovie = () => {
     if (modifyProgress) setProgressStep(progressStep + 1);
   };
 
-  console.log(data);
+  useEffect(() => {
+    if (progressStep === steps.length) {
+      setFetchMovie(true);
+    }
+  }, [progressStep, steps]);
 
   return (
     <div className={classes.FindMeMovie}>
@@ -35,9 +49,9 @@ const FindMeMovie = () => {
         </h2>
         <Button
           clicked={(data) => {
-            onGoBackHandler(false);
+            onGoBackHandler(true);
           }}
-          type='grey'
+          variantColor='grey'
           disabled={step <= 1}
         >
           Go Back
@@ -46,7 +60,7 @@ const FindMeMovie = () => {
       <MultiStepForm
         currentStep={step}
         currentProgressStep={progressStep}
-        steps={['Genre', 'Language', 'Rating', 'Popular', 'Year']}
+        steps={steps}
       >
         <WelcomeStep
           onNextStepHandler={() => {
@@ -65,9 +79,25 @@ const FindMeMovie = () => {
             setData({ ...data, language: newLanguage });
           }}
         />
-        <RatingStep />
-        <YearStep />
-        <PopularStep />
+        <RatingStep
+          onNextStepHandler={(value) => {
+            onNextHandler(true);
+            setData({ ...data, rating: value });
+          }}
+        />
+        <PopularStep
+          onNextStepHandler={(value) => {
+            onNextHandler(true);
+            setData({ ...data, rating: value });
+          }}
+        />
+        <YearStep
+          onNextStepHandler={(value) => {
+            onNextHandler(true);
+            setData({ ...data, rating: value });
+          }}
+        />
+        <RecommendationStep fetchMovie={fetchMovie} />
       </MultiStepForm>
     </div>
   );

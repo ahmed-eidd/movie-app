@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Button = ({
   variant = 'colored',
-  type = 'red',
+  variantColor = 'red',
+  type = 'button',
   clicked,
   children,
   to,
@@ -25,7 +26,7 @@ const Button = ({
       break;
   }
 
-  switch (type) {
+  switch (variantColor) {
     case 'grey':
       btnType = classes.grey;
       break;

@@ -13,7 +13,7 @@ const LogOut = () => {
         Welcome <span>Guest</span>
       </p>
       <Button
-        type="grey"
+        variantColor="grey"
         clicked={() => dispatch(actions.guestSessionDelete(guestSessionId))}
       >
         Log Out

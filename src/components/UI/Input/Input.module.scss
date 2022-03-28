@@ -1,0 +1,45 @@
+@import 'variables';
+
+.InputContainer {
+  position: relative;
+}
+
+.Input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid var(--grey-light);
+  padding: 1rem 5rem 1rem 0.5rem;
+  outline: none;
+  font-family: var(--font-primary);
+
+  color: var(--grey-light);
+}
+
+.Input::placeholder {
+  font-size: 1.4rem;
+  color: var(--grey-light);
+  font-weight: bold;
+  font-family: var(--font-primary);
+}
+
+.Input:focus {
+  border-bottom: 2px solid var(--red-primary);
+  color: var(--red-primary);
+}
+
+.InputErrorMessage {
+  color: $red-primary;
+  position: absolute;
+  font-size: 1.4rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

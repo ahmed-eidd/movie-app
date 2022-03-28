@@ -71,12 +71,12 @@ const LoginModal = ({
     >
       {loginTab === 'Sign Up' ? SignUp : Login}
       {loginTab === 'Sign Up' ? (
-        <Button type="red">{loginTab}</Button>
+        <Button variantColor="red">{loginTab}</Button>
       ) : (
-        <Button type="red">{loginTab}</Button>
+        <Button variantColor="red">{loginTab}</Button>
       )}
       <p className={classes.span}>OR</p>
-      <Button clicked={guestModeHandler} type="grey">Guest Mode</Button>
+      <Button clicked={guestModeHandler} variantColor="grey">Guest Mode</Button>
     </Modal>
   );
 };

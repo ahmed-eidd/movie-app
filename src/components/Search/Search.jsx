@@ -1,8 +1,10 @@
-import React, { useState,  } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import classes from './Search.module.scss';
 import * as actions from '../../store/actions/index';
+import Input from '../UI/Input/Input';
+import Form from '../UI/Form/Form';
 
 const Search = (props) => {
   const [input, setInput] = useState('');
@@ -16,23 +18,23 @@ const Search = (props) => {
   //   }
   // },[])
   return (
-    <form
+    <Form
       className={classes.Form}
       onSubmit={(e) => {
         dispatch(actions.searchFetch(input));
-        e.preventDefault();
         props.history.push(`/search/${input}`);
         e.target.elements.text.value = '';
       }}
     >
-      <input
-        className={classes.Input}
-        name="text"
-        autoComplete="off"
-        placeholder="Search..."
+      <Input
+        // className={classes.Input}
+        name='text'
+        autoComplete='off'
+        placeholder='Search...'
+        value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-    </form>
+    </Form>
   );
 };
 
