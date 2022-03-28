@@ -12,30 +12,30 @@ import YearStep from './YearStep/YearStep';
 
 const FindMeMovie = () => {
   const [step, setStep] = useState(0);
-  const [steps, setSteps] = useState([
-    'Genre',
-    'Language',
-    'Rating',
-    'Popular',
-    'Year',
-  ]);
+  const [steps] = useState(['Genre', 'Language', 'Rating', 'Popular', 'Year']);
   const [progressStep, setProgressStep] = useState(0);
   const [fetchMovie, setFetchMovie] = useState(false);
   const [data, setData] = useState({});
 
   const onGoBackHandler = (modifyProgress) => {
     if (step <= 1) return;
+
+    // if modifyProgress is passed => remove one to the step bar
     if (modifyProgress) setProgressStep(progressStep - 1);
+
     setStep(step - 1);
     setFetchMovie(false);
   };
 
   const onNextHandler = (modifyProgress) => {
     setStep(step + 1);
+
+    // if modifyProgress is passed => add one to the step bar
     if (modifyProgress) setProgressStep(progressStep + 1);
   };
 
   useEffect(() => {
+    // fetch movies after finishing all the step
     if (progressStep === steps.length) {
       setFetchMovie(true);
     }
@@ -67,37 +67,43 @@ const FindMeMovie = () => {
             onNextHandler();
           }}
         />
+
         <GenreStep
           onNextStepHandler={(newData) => {
             onNextHandler(true);
             setData({ ...data, genre: newData });
           }}
         />
+
         <LanguageStep
           onNextStepHandler={(newLanguage) => {
             onNextHandler(true);
             setData({ ...data, language: newLanguage });
           }}
         />
+
         <RatingStep
           onNextStepHandler={(value) => {
             onNextHandler(true);
             setData({ ...data, rating: value });
           }}
         />
+
         <PopularStep
           onNextStepHandler={(value) => {
             onNextHandler(true);
-            setData({ ...data, rating: value });
+            setData({ ...data, popular: value });
           }}
         />
+
         <YearStep
           onNextStepHandler={(value) => {
             onNextHandler(true);
-            setData({ ...data, rating: value });
+            setData({ ...data, year: value });
           }}
         />
-        <RecommendationStep fetchMovie={fetchMovie} />
+
+        <RecommendationStep data={data} fetchMovie={fetchMovie} />
       </MultiStepForm>
     </div>
   );

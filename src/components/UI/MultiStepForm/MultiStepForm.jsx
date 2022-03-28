@@ -12,8 +12,13 @@ const MultiStepForm = ({
     <div className={classes.Container}>
       <div className={classes.ProgressBar}>
         {steps.map((step, i) => (
-          <>
-            <div className={[classes.ProgressBar__Step].join(' ')}>
+          <React.Fragment key={step}>
+            <div
+              className={[
+                classes.ProgressBar__Step,
+                i <= currentProgressStep && classes.ProgressBar__Step__Complete,
+              ].join(' ')}
+            >
               <p className={classes.ProgressBar__Step__Number}>{i + 1}</p>
               <p className={classes.ProgressBar__Step__Name}>{step}</p>
             </div>
@@ -22,11 +27,11 @@ const MultiStepForm = ({
                 className={[
                   classes.ProgressBar__Step__Bar,
                   i <= currentProgressStep &&
-                    classes.ProgressBar__Step__Bar__complete,
+                    classes.ProgressBar__Step__Bar__Complete,
                 ].join(' ')}
               ></div>
             )}
-          </>
+          </React.Fragment>
         ))}
       </div>
       <motion.div
@@ -46,9 +51,11 @@ const MultiStepForm = ({
             aria-hidden={currentStep !== i}
             tabIndex={currentStep === i ? 0 : -1}
             className={classes.Content}
-            style={{
-              // height: currentStep === i ? '100%' : 0,
-            }}
+            style={
+              {
+                // height: currentStep === i ? '100%' : 0,
+              }
+            }
           >
             {child}
           </div>

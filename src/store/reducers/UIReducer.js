@@ -75,55 +75,77 @@ const UIReducer = (state = initialState, action) => {
     case actionTypes.NEW_RELEASE_FETCH_START:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case actionTypes.NEW_RELEASE_RES:
       return {
         ...state,
-        loading: false
-      }
+        loading: false,
+      };
     case actionTypes.NOW_PLAYING_ERR:
       return {
         ...state,
         loading: false,
-        error: true
-      }
+        error: true,
+      };
     case actionTypes.GET_DETAILS_FETCH_START:
       return {
         ...state,
         loading: true,
-        error: false
-      }
+        error: false,
+      };
     case actionTypes.GET_DETAILS_RES:
       return {
         ...state,
         loading: false,
-        error: false
-      }
+        error: false,
+      };
     case actionTypes.GET_DETAILS_ERR:
       return {
         ...state,
         loading: false,
-        error: true
-      }
+        error: true,
+      };
     case actionTypes.SEARCH_FETCH_START:
       return {
         ...state,
         loading: true,
-        error: false
-      }
+        error: false,
+      };
     case actionTypes.SEARCH_RES:
       return {
         ...state,
         loading: false,
-        error: false
-      }
+        error: false,
+      };
     case actionTypes.SEARCH_ERR:
       return {
         ...state,
         loading: false,
-        error: true
-      }
+        error: true,
+      };
+
+    case actionTypes.FIND_ME_MOVIE_FETCH_START: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+
+    case actionTypes.FIND_ME_MOVIE_RES: {
+      return {
+        ...state,
+        loading: false,
+      };
+    }
+
+    case actionTypes.FIND_ME_MOVIE_ERROR: {
+      return {
+        ...state,
+        error: true,
+        loading: false,
+      };
+    }
     default:
       return state;
   }

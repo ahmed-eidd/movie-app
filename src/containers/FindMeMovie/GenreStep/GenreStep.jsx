@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Button from '../../../components/UI/Button/Button';
 import Select from '../../../components/UI/Select/Select';
 import { dataAsSelectOption } from '../../../helpers/dataAsSelectOptions';
 import classes from './GenreStep.module.scss';
 
 const GenreStep = ({ onNextStepHandler }) => {
+
   const genres = useSelector((state) => state.moviesHome.genres);
-  const genresOptions = dataAsSelectOption(genres, 'id', 'name');
   const [value, setValue] = useState(null);
-  console.log(genresOptions);
+
+  // convert genres ArrOfObj to [{value:..., label:...}] for react-select option props
+  const genresOptions = dataAsSelectOption(genres, 'id', 'name');
+
   return (
     <div className={classes.GenreStep}>
       <h2>Please pick a genre</h2>
@@ -19,7 +21,7 @@ const GenreStep = ({ onNextStepHandler }) => {
           placeholder='Please select a genre'
           onChange={(value) => {
             setValue(value);
-            onNextStepHandler(value?.value);
+            onNextStepHandler(value?.label);
           }}
           options={genresOptions}
         />

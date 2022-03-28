@@ -9,7 +9,7 @@ const PosterCard = ({ src, title, genre, favMovie, wishListMovie, id }) => {
   // a function to reduce the title if it has more than 17 character with convert the string into an array to use the reduce method on it and join it back to a string again
   const limitTitle = (name, limit = 17) => {
     const newTitle = [];
-    if (name.length > limit) {
+    if (name?.length > limit) {
       name.split(' ').reduce((acc, cur) => {
         if (acc + cur.length <= limit) newTitle.push(cur);
         return acc + cur.length;
@@ -26,13 +26,13 @@ const PosterCard = ({ src, title, genre, favMovie, wishListMovie, id }) => {
           className={classes.likeBtn}
           onClick={() => dispatch(actions.getFavMovies(favMovie))}
         >
-          <i className="far fa-heart"></i>
+          <i className='far fa-heart'></i>
         </button>
         <button
           onClick={() => dispatch(actions.getWishListMovies(wishListMovie))}
           className={classes.wishListBtn}
         >
-          <i className="far fa-clock"></i>
+          <i className='far fa-clock'></i>
         </button>
         <img src={src} alt={title} className={classes.posterImg} />
       </div>

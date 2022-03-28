@@ -1,9 +1,11 @@
 import React from 'react';
 import classes from './PopularStep.module.scss';
 import Button from '../../../components/UI/Button/Button';
-import Select from '../../../components/UI/Select/Select';
 
-const options = ['Popular', 'Unpopular'];
+const options = [
+  { label: 'Popular', value: 10000 },
+  { label: 'Unpopular', value: 1 },
+];
 
 const PopularStep = ({ onNextStepHandler }) => {
   return (
@@ -12,8 +14,12 @@ const PopularStep = ({ onNextStepHandler }) => {
       <div className={classes.PopularStep__Options}>
         {options.map((opt) => {
           return (
-            <Button variant='filled' clicked={() => onNextStepHandler(opt)}>
-              {opt}
+            <Button
+              variant='filled'
+              clicked={() => onNextStepHandler(opt.value)}
+              key={opt.value}
+            >
+              {opt.label}
             </Button>
           );
         })}

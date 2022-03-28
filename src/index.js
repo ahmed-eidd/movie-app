@@ -19,6 +19,7 @@ import { BrowserRouter } from 'react-router-dom';
 import favMoviesReducer from './store/reducers/favMoviesReducer';
 import wishListMoviesReducer from './store/reducers/wishListMoviesReducer';
 import getDetailsReducer from './store/reducers/getDetailsReducer';
+import findMeMovieReducer from './store/reducers/findMeMovieReducer';
 
 const rootReducer = combineReducers({
   moviesHome: movieHomeReducer,
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   movieDetails: getDetailsReducer,
   searchRes: searchReducer,
+  findMeMovie: findMeMovieReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

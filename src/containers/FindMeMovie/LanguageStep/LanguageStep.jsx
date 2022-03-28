@@ -3,7 +3,7 @@ import Button from '../../../components/UI/Button/Button';
 import classes from './LanguageStep.module.scss';
 
 const languages = [
-  { label: 'English', value: 'en-Us' },
+  { label: 'English', value: 'en' },
   { label: 'Spanish', value: 'es' },
   { label: 'Arabic', value: 'ar' },
 ];
@@ -18,6 +18,7 @@ const LanguageStep = ({ onNextStepHandler }) => {
           <Button
             variant='filled'
             clicked={() => onNextStepHandler(lang.value)}
+            key={lang.value}
           >
             {lang.label}
           </Button>

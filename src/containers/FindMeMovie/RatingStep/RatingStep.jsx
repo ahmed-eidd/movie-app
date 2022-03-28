@@ -4,7 +4,6 @@ import Button from '../../../components/UI/Button/Button';
 import Form from '../../../components/UI/Form/Form';
 import Input from '../../../components/UI/Input/Input';
 
-const options = ['Less than 7', 'More than 7'];
 
 const RatingStep = ({ onNextStepHandler }) => {
   const [value, setValue] = useState('');
