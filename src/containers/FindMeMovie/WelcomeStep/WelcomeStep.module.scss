@@ -1,10 +1,11 @@
 @import 'variables';
 
 .WelcomeStep {
+  height: 100%;
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
 }

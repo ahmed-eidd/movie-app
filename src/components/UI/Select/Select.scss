@@ -5,7 +5,7 @@
 
   &__control,
   &__menu {
-    background-color: transparent !important;
+    background-color: $grey-dark !important;
     border-color: $red-primary !important;
     border-width: 1px;
     border-style: solid;
@@ -45,6 +45,7 @@
   &__menu {
     &-list {
       max-height: 175px !important;
+      color: $font-color-primary !important;
     }
   }
 

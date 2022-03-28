@@ -7,27 +7,19 @@ import classes from './GenreStep.module.scss';
 
 const GenreStep = ({ onNextStepHandler }) => {
   const genres = useSelector((state) => state.moviesHome.genres);
-  const genresOptions = dataAsSelectOption(genres, 'name', 'name');
+  const genresOptions = dataAsSelectOption(genres, 'id', 'name');
   const [value, setValue] = useState(null);
   console.log(genresOptions);
   return (
     <div className={classes.GenreStep}>
       <h2>Please pick a genre</h2>
       <div className={classes.GenreStep__Genres}>
-        {/* {genres.map((genre) => (
-          <Button
-            clicked={() => onNextStepHandler(genre.name)}
-            variant='filled'
-          >
-            {genre?.name}
-          </Button>
-        ))} */}
         <Select
           value={value}
           placeholder='Please select a genre'
           onChange={(value) => {
             setValue(value);
-            onNextStepHandler();
+            onNextStepHandler(value?.value);
           }}
           options={genresOptions}
         />

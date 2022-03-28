@@ -9,10 +9,15 @@ const PopularStep = ({ onNextStepHandler }) => {
   return (
     <div className={classes.PopularStep}>
       <h2>Finally, something popular or not so much well known?</h2>
-      {options.map((opt) => {
-        return <Button variant='filled'>{opt}</Button>;
-      })}
-      <Select />
+      <div className={classes.PopularStep__Options}>
+        {options.map((opt) => {
+          return (
+            <Button variant='filled' clicked={() => onNextStepHandler(opt)}>
+              {opt}
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 };

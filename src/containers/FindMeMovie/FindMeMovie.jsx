@@ -7,6 +7,7 @@ import LanguageStep from './LanguageStep/LanguageStep';
 import PopularStep from './PopularStep/PopularStep';
 import RatingStep from './RatingStep/RatingStep';
 import WelcomeStep from './WelcomeStep/WelcomeStep';
+import YearStep from './YearStep/YearStep';
 
 const FindMeMovie = () => {
   const [step, setStep] = useState(0);
@@ -64,8 +65,9 @@ const FindMeMovie = () => {
             setData({ ...data, language: newLanguage });
           }}
         />
-        <PopularStep />
         <RatingStep />
+        <YearStep />
+        <PopularStep />
       </MultiStepForm>
     </div>
   );

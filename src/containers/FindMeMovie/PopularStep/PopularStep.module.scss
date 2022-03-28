@@ -1,5 +1,17 @@
 @import 'variables';
 
 .PopularStep {
-  // height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__Options {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 3rem;
+    gap: 3rem;
+  }
 }

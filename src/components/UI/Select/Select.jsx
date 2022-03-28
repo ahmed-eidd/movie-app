@@ -19,7 +19,10 @@ const Select = ({
       classNamePrefix='custom-select'
       options={options}
       placeholder={placeholder}
-    >{placeholder}</ReactSelect>
+      menuPortalTarget={document.body}
+    >
+      {placeholder}
+    </ReactSelect>
   );
 };
 
