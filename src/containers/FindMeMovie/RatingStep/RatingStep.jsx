@@ -4,7 +4,6 @@ import Button from '../../../components/UI/Button/Button';
 import Form from '../../../components/UI/Form/Form';
 import Input from '../../../components/UI/Input/Input';
 
-
 const RatingStep = ({ onNextStepHandler }) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState(null);
@@ -14,7 +13,11 @@ const RatingStep = ({ onNextStepHandler }) => {
       <Form
         className={classes.RatingStep__Form}
         onSubmit={() => {
-          if (error || !value) {
+          if (error) {
+            return;
+          }
+          if (!value) {
+            setError('Please enter a number');
             return;
           }
           onNextStepHandler(value);
