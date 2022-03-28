@@ -1,0 +1,64 @@
+@import 'variables';
+
+.custom-select {
+  /*** Shared Style ***/
+
+  &__control,
+  &__menu {
+    background-color: transparent !important;
+    border-color: $red-primary !important;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: none !important;
+  }
+
+  &__indicator-separator {
+    background-color: $red-primary !important;
+  }
+
+  &__single-value,
+  &__input {
+    color: $font-color-primary !important;
+  }
+
+  &__value-container,
+  &____placeholder,
+  &__indicators {
+    font-size: 1.6rem;
+    background-color: $grey-dark;
+  }
+
+  /* Control Style */
+  &__control {
+    overflow: hidden;
+  }
+
+  /* Option Style */
+  &__option {
+    background-color: transparent !important;
+    &:hover {
+      background-color: $red-primary !important;
+    }
+  }
+
+  /* Menu Style */
+  &__menu {
+    &-list {
+      max-height: 175px !important;
+    }
+  }
+
+  /* Placeholder Style */
+
+  &__input-container {
+    color: $grey-light !important;
+    &::placeholder {
+      color: $grey-light !important;
+    }
+  }
+}
+
+.custom-select {
+  font-size: 1.6rem;
+  color: red;
+}

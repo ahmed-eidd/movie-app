@@ -1,6 +1,7 @@
 import React from 'react';
-import classes from './PopularStep.module.scss'
+import classes from './PopularStep.module.scss';
 import Button from '../../../components/UI/Button/Button';
+import Select from '../../../components/UI/Select/Select';
 
 const options = ['Popular', 'Unpopular'];
 
@@ -11,6 +12,7 @@ const PopularStep = ({ onNextStepHandler }) => {
       {options.map((opt) => {
         return <Button variant='filled'>{opt}</Button>;
       })}
+      <Select />
     </div>
   );
 };
