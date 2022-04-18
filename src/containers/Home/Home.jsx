@@ -64,7 +64,7 @@ const Home = () => {
   // Main Content if state.loading not True
   if (!loading) {
     main = (
-      <div className={classes.container}>
+      <div id='container' className={classes.container}>
         <div className={classes.SliderContainer}>
           <Slider {...settings}>
             {movies.map((movie) => (

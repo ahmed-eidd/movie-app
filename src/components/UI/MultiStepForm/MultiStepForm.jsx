@@ -51,11 +51,10 @@ const MultiStepForm = ({
             aria-hidden={currentStep !== i}
             tabIndex={currentStep === i ? 0 : -1}
             className={classes.Content}
-            style={
-              {
-                // height: currentStep === i ? '100%' : 0,
-              }
-            }
+            style={{
+              pointerEvents: currentStep === i ? 'auto' : 'none',
+              // display: currentStep === i ? 'block' : 'none',
+            }}
           >
             {child}
           </div>

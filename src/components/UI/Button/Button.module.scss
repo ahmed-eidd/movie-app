@@ -1,5 +1,8 @@
 @import 'variables.scss';
 
+
+
+
 .Button {
   border: none;
   padding: 1rem 2rem;
@@ -46,5 +49,12 @@
   &:hover {
     background-color: var(--red-primary);
     transform: translateY(-3px);
+  }
+}
+
+
+@keyframes test {
+  0% {
+
   }
 }

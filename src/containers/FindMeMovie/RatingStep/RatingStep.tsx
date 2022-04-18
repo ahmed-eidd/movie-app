@@ -4,9 +4,14 @@ import Button from '../../../components/UI/Button/Button';
 import Form from '../../../components/UI/Form/Form';
 import Input from '../../../components/UI/Input/Input';
 
-const RatingStep = ({ onNextStepHandler }) => {
+interface RatingStepProps {
+  onNextStepHandler: (str: string) => void;
+}
+
+const RatingStep: React.FC<RatingStepProps> = ({ onNextStepHandler }) => {
   const [value, setValue] = useState('');
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
+
   return (
     <div>
       <h2>Please tell us what rating this movie should have</h2>
@@ -19,16 +24,18 @@ const RatingStep = ({ onNextStepHandler }) => {
           if (!value) {
             setError('Please enter a number');
             return;
-          }
+            }
+
           onNextStepHandler(value);
         }}
       >
         <Input
           placeholder='min = 0, max = 10'
-          onChange={(e) => {
+          className=''
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const val = e.target.value;
             setValue(val);
-            if (val < 0 || val > 10) {
+            if (+val < 0 || +val > 10) {
               setError('Minimun is 0 Max is 10');
               console.log('err');
               return;

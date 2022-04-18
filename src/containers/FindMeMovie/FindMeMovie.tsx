@@ -17,7 +17,7 @@ const FindMeMovie = () => {
   const [fetchMovie, setFetchMovie] = useState(false);
   const [data, setData] = useState({});
 
-  const onGoBackHandler = (modifyProgress) => {
+  const onGoBackHandler = (modifyProgress?: boolean) => {
     if (step <= 1) return;
 
     // if modifyProgress is passed => remove one to the step bar
@@ -27,7 +27,7 @@ const FindMeMovie = () => {
     setFetchMovie(false);
   };
 
-  const onNextHandler = (modifyProgress) => {
+  const onNextHandler = (modifyProgress?: boolean) => {
     setStep(step + 1);
 
     // if modifyProgress is passed => add one to the step bar
@@ -48,7 +48,7 @@ const FindMeMovie = () => {
           <span>Welcome</span>, Let's Help you find a new movie
         </h2>
         <Button
-          clicked={(data) => {
+          clicked={() => {
             onGoBackHandler(true);
           }}
           variantColor='grey'
@@ -69,35 +69,35 @@ const FindMeMovie = () => {
         />
 
         <GenreStep
-          onNextStepHandler={(newData) => {
+          onNextStepHandler={(newData: string) => {
             onNextHandler(true);
             setData({ ...data, genre: newData });
           }}
         />
 
         <LanguageStep
-          onNextStepHandler={(newLanguage) => {
+          onNextStepHandler={(newLanguage: string) => {
             onNextHandler(true);
             setData({ ...data, language: newLanguage });
           }}
         />
 
         <RatingStep
-          onNextStepHandler={(value) => {
+          onNextStepHandler={(value: string) => {
             onNextHandler(true);
             setData({ ...data, rating: value });
           }}
         />
 
         <PopularStep
-          onNextStepHandler={(value) => {
+          onNextStepHandler={(value: string) => {
             onNextHandler(true);
             setData({ ...data, popular: value });
           }}
         />
 
         <YearStep
-          onNextStepHandler={(value) => {
+          onNextStepHandler={(value:string) => {
             onNextHandler(true);
             setData({ ...data, year: value });
           }}

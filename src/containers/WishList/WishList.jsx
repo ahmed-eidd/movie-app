@@ -28,7 +28,6 @@ const WishList = () => {
       ) : (
         <h1 className={classes.MainTitle}>Sign Up or Log In First</h1>
       )}
-      >
     </div>
   );
 };
