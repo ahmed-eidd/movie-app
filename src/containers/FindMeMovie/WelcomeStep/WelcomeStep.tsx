@@ -2,7 +2,11 @@ import React from 'react';
 import Button from '../../../components/UI/Button/Button';
 import classes from './WelcomeStep.module.scss';
 
-const WelcomeStep = ({ onNextStepHandler }) => {
+interface WelcomeStepProps {
+  onNextStepHandler: () => void;
+}
+
+const WelcomeStep: React.FC<WelcomeStepProps> = ({ onNextStepHandler }) => {
   return (
     <div className={classes.WelcomeStep}>
       <h2>Welcome To MovieBox</h2>

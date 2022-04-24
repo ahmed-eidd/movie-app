@@ -1,6 +1,11 @@
 import React from 'react';
 import Button from '../../../components/UI/Button/Button';
+import { NextStepProp } from '../type';
 import classes from './LanguageStep.module.scss';
+
+interface LanguageStepProps {
+  onNextStepHandler: (data: string) => void;
+}
 
 const languages = [
   { label: 'English', value: 'en' },
@@ -8,7 +13,7 @@ const languages = [
   { label: 'Arabic', value: 'ar' },
 ];
 
-const LanguageStep = ({ onNextStepHandler }) => {
+const LanguageStep:React.FC<NextStepProp> = ({ onNextStepHandler }) => {
   return (
     <div className={classes.LanguageStep}>
       <h2>Please pick a language</h2>

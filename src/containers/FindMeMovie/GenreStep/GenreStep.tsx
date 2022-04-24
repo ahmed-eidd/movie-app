@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { SetStateAction, useState } from 'react';
+import { RootStateOrAny, useSelector } from 'react-redux';
 import Select from '../../../components/UI/Select/Select';
 import { dataAsSelectOption } from '../../../helpers/dataAsSelectOptions';
 import classes from './GenreStep.module.scss';
 
-const GenreStep = ({ onNextStepHandler }) => {
+interface GenreStepProps {
+  onNextStepHandler: (data: string) => void;
+}
 
-  const genres = useSelector((state) => state.moviesHome.genres);
+
+const GenreStep: React.FC<GenreStepProps> = ({ onNextStepHandler }) => {
+  const genres = useSelector(
+    (state: RootStateOrAny) => state.moviesHome.genres
+  );
   const [value, setValue] = useState(null);
 
   // convert genres ArrOfObj to [{value:..., label:...}] for react-select option props
@@ -19,11 +25,14 @@ const GenreStep = ({ onNextStepHandler }) => {
         <Select
           value={value}
           placeholder='Please select a genre'
-          onChange={(value) => {
+          onChange={(value: any) => {
+            console.log(value);
             setValue(value);
             onNextStepHandler(value?.label);
           }}
           options={genresOptions}
+          style={undefined}
+          className={undefined}
         />
       </div>
     </div>

@@ -34,6 +34,7 @@ const FindMeMovie = () => {
     if (modifyProgress) setProgressStep(progressStep + 1);
   };
 
+  
   useEffect(() => {
     // fetch movies after finishing all the step
     if (progressStep === steps.length) {
@@ -97,7 +98,7 @@ const FindMeMovie = () => {
         />
 
         <YearStep
-          onNextStepHandler={(value:string) => {
+          onNextStepHandler={(value: string) => {
             onNextHandler(true);
             setData({ ...data, year: value });
           }}
